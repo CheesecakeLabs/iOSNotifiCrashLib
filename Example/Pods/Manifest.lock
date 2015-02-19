@@ -1,0 +1,25 @@
+PODS:
+  - CheeseBug (0.1.0)
+  - KeepLayout (1.6.0)
+
+DEPENDENCIES:
+  - CheeseBug (from `../`)
+  - KeepLayout (from `https://github.com/iMartinKiss/KeepLayout.git`, tag `v1.6.0`)
+
+EXTERNAL SOURCES:
+  CheeseBug:
+    :path: ../
+  KeepLayout:
+    :git: https://github.com/iMartinKiss/KeepLayout.git
+    :tag: v1.6.0
+
+CHECKOUT OPTIONS:
+  KeepLayout:
+    :git: https://github.com/iMartinKiss/KeepLayout.git
+    :tag: v1.6.0
+
+SPEC CHECKSUMS:
+  CheeseBug: c1d33414caddda475875d4efc6df362ac5f4dbcb
+  KeepLayout: f6364def4921aca9853b91d998b5737a7210fd6a
+
+COCOAPODS: 0.35.0
