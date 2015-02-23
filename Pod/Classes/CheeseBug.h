@@ -12,8 +12,6 @@
     BOOL dismissed;
 }
 
-+ (void)initCheeseBug;
-
 @end
 
 void InstallUncaughtExceptionHandler();

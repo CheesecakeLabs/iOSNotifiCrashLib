@@ -7,13 +7,19 @@
 //
 
 #import "CheeseBug.h"
+#import "Crash.h"
+#import "AFNetworking.h"
+#import "Configuration.h"
+
 #include <libkern/OSAtomic.h>
 #include <execinfo.h>
 
 @interface CheeseBug ()
 
+@property (strong, nonatomic) Configuration *config;
+
 - (void)initCheeseBug;
-- (void)validateAndSaveCriticalApplicationData;
+- (void)validateAndSaveCriticalApplicationData:(NSException *)exception;
 
 @end
 
@@ -41,6 +47,13 @@ const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
 
 - (void)initCheeseBug {
     InstallUncaughtExceptionHandler();
+    [self setupConfiguration];
+}
+
+- (void)setupConfiguration {
+    self.config = [[Configuration alloc] init];
+    self.config.host = @"http://10.0.1.5:8000/core/crashes/";
+    self.config.serialNumber = @"8723c5n23857cn23n52nc2138cn231";
 }
 
 + (NSArray*)backtrace {
@@ -68,28 +81,35 @@ const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
     dismissed = YES;
 }
 
-- (void)validateAndSaveCriticalApplicationData {
-    // Create the request.
-    NSMutableURLRequest *request =
-            [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://cheesebug.herokuapp.com/reports"]];
-
-    // Specify that it will be a POST request
-    request.HTTPMethod = @"POST";
-
-    // This is how we set header fields
-    [request setValue:@"application/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-
-    // Convert your data and set your request's HTTPBody property
-    NSString *stringData = @"thread=some&cause=unknown";
-    NSData *requestBodyData = [stringData dataUsingEncoding:NSUTF8StringEncoding];
-    request.HTTPBody = requestBodyData;
-
-    // Create url connection and fire request
-    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+- (void)validateAndSaveCriticalApplicationData:(NSException *)exception {
+    
+    // Creates a crash object wich contains the data log.
+    Crash *crash = [[Crash alloc] init];
+    crash.crashName = exception.name;
+    crash.crashReason = exception.reason;
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
+    [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+    
+    NSMutableDictionary *crashParametersJSON = [[NSMutableDictionary alloc] init];
+    [crashParametersJSON setObject:exception.name forKey:@"exception_name"];
+    [crashParametersJSON setObject:exception.reason forKey:@"exception_reason"];
+    
+    NSMutableDictionary *crashJSON = [[NSMutableDictionary alloc] init];
+    [crashJSON setObject:self.config.host forKey:@"serial_number"];
+    [crashJSON setObject:crashParametersJSON forKey:@"crash"];
+    
+    NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"POST" URLString:self.config.host parameters:crashJSON error:nil];
+    [request setTimeoutInterval:3000];
+    
+    AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request success:nil failure:nil];
+    
+    [manager.operationQueue addOperation:operation];
 }
 
 - (void)handleException:(NSException *)exception {
-    [self validateAndSaveCriticalApplicationData];
+    [self validateAndSaveCriticalApplicationData:exception];
 
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unhandled exception"
             message:[NSString stringWithFormat:@"\nDebug details follow:\n%@\n%@",
