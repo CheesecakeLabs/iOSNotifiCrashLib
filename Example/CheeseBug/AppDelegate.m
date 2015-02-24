@@ -24,7 +24,7 @@
     [self.window makeKeyAndVisible];
 
     // Initializes the library which will handle the uncaught exceptions.
-    [[CheeseBug alloc] init];
+    [CheeseBug initCheeseBug:@"8c79ae477ff757474cdb8c102a4a0c"];
 
     return YES;
 }

@@ -15,11 +15,4 @@
     return self;
 }
 
-- (NSString*)getStringTime {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"EEE, yyyy MMM dd HH:mm:ss ZZZ"];
-    
-    return [dateFormatter stringFromDate:self.time];
-}
-
 @end

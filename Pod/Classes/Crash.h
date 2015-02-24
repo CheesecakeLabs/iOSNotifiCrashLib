@@ -17,12 +17,5 @@
 @property (strong, nonatomic) NSString *method;
 @property (strong, nonatomic) NSString *lineNumber;
 @property (strong, nonatomic) NSString *cause;
-@property (strong, nonatomic) NSDate   *time;
-
-
-/**
- * Gets the time field in a string format.
- */
-- (NSString*)getStringTime;
 
 @end

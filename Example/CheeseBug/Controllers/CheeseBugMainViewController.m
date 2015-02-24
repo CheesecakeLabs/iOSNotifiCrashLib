@@ -37,16 +37,12 @@
 #pragma mark - User Interaction
 
 - (void)divideByZero:(UIButton *)sender {
-    /*
-     int a = 1;
-     int b = 0;
-     int c = a / b;
-     */
+//    int a = 1;
+//    int b = 0;
+//    NSLog(@"%d", a/b);
 
     NSArray *array = @[@1, @2, @3];
-    NSString *str = array[3];
-    
-    //@throw [NSException exceptionWithName:@"aaaa" reason:@"bbbb" userInfo:nil];
+    NSLog(@"%@",array[3]);
 }
 
 @end

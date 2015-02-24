@@ -9,111 +9,79 @@
 #import "CheeseBug.h"
 #import "Crash.h"
 #import "AFNetworking.h"
-#import "Configuration.h"
 
 #include <libkern/OSAtomic.h>
 #include <execinfo.h>
 
-@interface CheeseBug ()
+#pragma mark - Static constants
 
-@property (strong, nonatomic) Configuration *config;
+static NSString* const UncaughtExceptionHandlerSignalExceptionName = @"UncaughtExceptionHandlerSignalExceptionName";
+static NSString* const UncaughtExceptionHandlerSignalKey = @"UncaughtExceptionHandlerSignalKey";
+static NSString* const UncaughtExceptionHandlerAddressesKey = @"UncaughtExceptionHandlerAddressesKey";
 
-- (void)initCheeseBug;
-- (void)validateAndSaveCriticalApplicationData:(NSException *)exception;
+static volatile int32_t UncaughtExceptionCount = 0;
+static const int32_t UncaughtExceptionMaximum = 10;
 
-@end
-
-NSString * const UncaughtExceptionHandlerSignalExceptionName = @"UncaughtExceptionHandlerSignalExceptionName";
-NSString * const UncaughtExceptionHandlerSignalKey = @"UncaughtExceptionHandlerSignalKey";
-NSString * const UncaughtExceptionHandlerAddressesKey = @"UncaughtExceptionHandlerAddressesKey";
-
-volatile int32_t UncaughtExceptionCount = 0;
-const int32_t UncaughtExceptionMaximum = 10;
-
-const NSInteger UncaughtExceptionHandlerSkipAddressCount = 4;
-const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
+static const NSInteger UncaughtExceptionHandlerSkipAddressCount = 4;
+static const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
 
 @implementation CheeseBug
 
-- (id)init {
-    self = [super init];
-    
-    if (self) {
-        [self initCheeseBug];
+#pragma mark - Library setup
+
+// Represents a configuration that contains some useful information for the library to work.
+static Configuration *_config = nil;
+
+
+/*
+ * Gets the library configuration object.
+ */
++ (Configuration*)configutation {
+    if(_config == nil) {
+        _config = [[Configuration alloc] init];
     }
     
-    return self;
+    return _config;
 }
 
-- (void)initCheeseBug {
-    InstallUncaughtExceptionHandler();
-    [self setupConfiguration];
+/*
+ * Initializes the library for the given application serial. 
+ * This function implements the Facade Patter by being the 
+ * interface between the library and the app which uses it.
+ */
++ (void)initCheeseBug:(NSString*)serialNumber {
+    [CheeseBug setupConfiguration:serialNumber];
+    [CheeseBug installUncaughtExceptionHandler];
 }
 
-- (void)setupConfiguration {
-    self.config = [[Configuration alloc] init];
-    self.config.host = @"http://10.0.1.5:8000/core/crashes/";
-    self.config.serialNumber = @"8723c5n23857cn23n52nc2138cn231";
+/*
+ * Sets up the configuration regarding the endpoint server and the serial to authentication.
+ */
++ (void)setupConfiguration:(NSString*)serialNumber {
+    [[CheeseBug configutation] setHost:@"http://10.0.1.5:8000/core/crashes/"];
+    [[CheeseBug configutation] setSerialNumber:serialNumber];
 }
 
-+ (NSArray*)backtrace {
-    void* callstack[128];
-    int frames = backtrace(callstack, 128);
-    char **strs = backtrace_symbols(callstack, frames);
-    
-    int i;
-    NSMutableArray *backtrace = [NSMutableArray arrayWithCapacity:frames];
-    for (
-         i = UncaughtExceptionHandlerSkipAddressCount;
-         i < UncaughtExceptionHandlerSkipAddressCount +
-         UncaughtExceptionHandlerReportAddressCount;
-         i++)
-    {
-        [backtrace addObject:[NSString stringWithUTF8String:strs[i]]];
-    }
-    
-    free(strs);
-    
-    return backtrace;
+/*
+ * Performs the installation of the handlers for eventual crashes in the application.
+ */
++ (void)installUncaughtExceptionHandler {
+    NSSetUncaughtExceptionHandler(&exceptionHandler);
+    signal(SIGABRT, signalHandler);
+    signal(SIGILL,  signalHandler);
+    signal(SIGSEGV, signalHandler);
+    signal(SIGFPE,  signalHandler);
+    signal(SIGBUS,  signalHandler);
+    signal(SIGPIPE, signalHandler);
 }
 
-- (void)alertView:(UIAlertView *)anAlertView clickedButtonAtIndex:(NSInteger)anIndex {
-    dismissed = YES;
-}
-
-- (void)validateAndSaveCriticalApplicationData:(NSException *)exception {
-    
-    // Creates a crash object which contains the data log.
-    Crash *crash = [[Crash alloc] init];
-    crash.crashName = exception.name;
-    crash.crashReason = exception.reason;
-    crash.time = [NSDate date];
-    
-    // Fill the dictionary with data regarding the crash itself.
-    NSMutableDictionary *crashParametersJSON = [[NSMutableDictionary alloc] init];
-    [crashParametersJSON setObject:crash.crashName forKey:@"exception_name"];
-    [crashParametersJSON setObject:crash.crashReason forKey:@"exception_reason"];
-    [crashParametersJSON setObject:[crash getStringTime] forKey:@"exception_time"];
-    
-    // Fill the dictionary which corresponds the full JSON sent to the server.
-    NSMutableDictionary *crashJSON = [[NSMutableDictionary alloc] init];
-    [crashJSON setObject:self.config.serialNumber forKey:@"serial_number"];
-    [crashJSON setObject:crashParametersJSON forKey:@"crash"];
-    
-    // Performs the HTTP POST setting the serializer to deal with JSON types.
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
-    [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
-    [manager POST:self.config.host parameters:crashJSON success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-}
-
+/*
+ * Deals how the app will bahaviour in the moment right before it crashes for good.
+ */
 - (void)handleException:(NSException *)exception {
-    [self validateAndSaveCriticalApplicationData:exception];
+    [self notifyCriticalApplicationData:exception];
     
+    // Raises an alert informing the user about the crash.
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unhandled exception"
                                                     message:[NSString stringWithFormat:@"\nDebug details follow:\n%@\n%@",
                                                              [exception reason],
@@ -127,6 +95,7 @@ const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
     CFRunLoopRef runLoop = CFRunLoopGetCurrent();
     CFArrayRef allModes = CFRunLoopCopyAllModes(runLoop);
     
+    // Keeps the app locked until the user clicks the "Quit" button.
     while (!dismissed) {
         for (NSString *mode in (__bridge NSArray*)allModes) {
             CFRunLoopRunInMode((__bridge CFStringRef)mode, 0.001, false);
@@ -150,9 +119,10 @@ const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
     }
 }
 
-@end
-
-void HandleException(NSException *exception) {
+/*
+ * Function pointed by the UncaughtExceptionHandler at the library instalation.
+ */
+static void exceptionHandler(NSException *exception) {
     int32_t exceptionCount = OSAtomicIncrement32(&UncaughtExceptionCount);
     
     if (exceptionCount > UncaughtExceptionMaximum) {
@@ -168,7 +138,10 @@ void HandleException(NSException *exception) {
                                             waitUntilDone:YES];
 }
 
-void SignalHandler(int signal) {
+/*
+ * Function pointed for the system to deal with critical signals emmited.
+ */
+static void signalHandler(int signal) {
     int32_t exceptionCount = OSAtomicIncrement32(&UncaughtExceptionCount);
     
     if (exceptionCount > UncaughtExceptionMaximum) {
@@ -187,12 +160,66 @@ void SignalHandler(int signal) {
                                             waitUntilDone:YES];
 }
 
-void InstallUncaughtExceptionHandler() {
-    NSSetUncaughtExceptionHandler(&HandleException);
-    signal(SIGABRT, SignalHandler);
-    signal(SIGILL, SignalHandler);
-    signal(SIGSEGV, SignalHandler);
-    signal(SIGFPE, SignalHandler);
-    signal(SIGBUS, SignalHandler);
-    signal(SIGPIPE, SignalHandler);
+/*
+ * Get data about the error occurred.
+ */
++ (NSArray*)backtrace {
+    void* callstack[128];
+    int frames = backtrace(callstack, 128);
+    char **strs = backtrace_symbols(callstack, frames);
+    
+    int i;
+    NSMutableArray *backtrace = [NSMutableArray arrayWithCapacity:frames];
+    for (
+         i = UncaughtExceptionHandlerSkipAddressCount;
+         i < UncaughtExceptionHandlerSkipAddressCount +
+         UncaughtExceptionHandlerReportAddressCount;
+         i++)
+    {
+        [backtrace addObject:[NSString stringWithUTF8String:strs[i]]];
+    }
+    
+    free(strs);
+    
+    return backtrace;
 }
+
+/*
+ * Releases the alert window and allow the application to finish.
+ */
+- (void)alertView:(UIAlertView *)anAlertView clickedButtonAtIndex:(NSInteger)anIndex {
+    dismissed = YES;
+}
+
+/*
+ * Performs the installation of the handlers for eventual crashes in the application.
+ */
+- (void)notifyCriticalApplicationData:(NSException *)exception {
+    
+    // Creates a crash object which contains the data log.
+    Crash *crash = [[Crash alloc] init];
+    crash.crashName = exception.name;
+    crash.crashReason = exception.reason;
+    
+    // Fill the dictionary with data regarding the crash itself.
+    NSMutableDictionary *crashParametersJSON = [[NSMutableDictionary alloc] init];
+    [crashParametersJSON setObject:crash.crashName forKey:@"exception_name"];
+    [crashParametersJSON setObject:crash.crashReason forKey:@"exception_reason"];
+    
+    // Fill the dictionary which corresponds the full JSON sent to the server.
+    NSMutableDictionary *crashJSON = [[NSMutableDictionary alloc] init];
+    [crashJSON setObject:[[CheeseBug configutation] serialNumber] forKey:@"serial_number"];
+    [crashJSON setObject:crashParametersJSON forKey:@"crash"];
+    
+    // Performs the HTTP POST setting the serializer to deal with JSON types.
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
+    [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+    [manager POST:[[CheeseBug configutation] host] parameters:crashJSON success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
+@end

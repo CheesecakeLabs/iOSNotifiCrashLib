@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Configuration.h"
 
 @interface CheeseBug : NSObject {
     BOOL dismissed;
 }
 
-@end
++ (Configuration*)configutation;
++ (void)initCheeseBug:(NSString*)serialNumber;
 
-void InstallUncaughtExceptionHandler();
+@end
