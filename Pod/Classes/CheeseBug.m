@@ -37,11 +37,11 @@ const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
 
 - (id)init {
     self = [super init];
-
+    
     if (self) {
         [self initCheeseBug];
     }
-
+    
     return self;
 }
 
@@ -60,20 +60,20 @@ const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
     void* callstack[128];
     int frames = backtrace(callstack, 128);
     char **strs = backtrace_symbols(callstack, frames);
-
+    
     int i;
     NSMutableArray *backtrace = [NSMutableArray arrayWithCapacity:frames];
     for (
-            i = UncaughtExceptionHandlerSkipAddressCount;
-            i < UncaughtExceptionHandlerSkipAddressCount +
-                    UncaughtExceptionHandlerReportAddressCount;
-            i++)
+         i = UncaughtExceptionHandlerSkipAddressCount;
+         i < UncaughtExceptionHandlerSkipAddressCount +
+         UncaughtExceptionHandlerReportAddressCount;
+         i++)
     {
         [backtrace addObject:[NSString stringWithUTF8String:strs[i]]];
     }
-
+    
     free(strs);
-
+    
     return backtrace;
 }
 
@@ -83,55 +83,58 @@ const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
 
 - (void)validateAndSaveCriticalApplicationData:(NSException *)exception {
     
-    // Creates a crash object wich contains the data log.
+    // Creates a crash object which contains the data log.
     Crash *crash = [[Crash alloc] init];
     crash.crashName = exception.name;
     crash.crashReason = exception.reason;
+    crash.time = [NSDate date];
     
+    // Fill the dictionary with data regarding the crash itself.
+    NSMutableDictionary *crashParametersJSON = [[NSMutableDictionary alloc] init];
+    [crashParametersJSON setObject:crash.crashName forKey:@"exception_name"];
+    [crashParametersJSON setObject:crash.crashReason forKey:@"exception_reason"];
+    [crashParametersJSON setObject:[crash getStringTime] forKey:@"exception_time"];
+    
+    // Fill the dictionary which corresponds the full JSON sent to the server.
+    NSMutableDictionary *crashJSON = [[NSMutableDictionary alloc] init];
+    [crashJSON setObject:self.config.serialNumber forKey:@"serial_number"];
+    [crashJSON setObject:crashParametersJSON forKey:@"crash"];
+    
+    // Performs the HTTP POST setting the serializer to deal with JSON types.
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
     [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
-    
-    NSMutableDictionary *crashParametersJSON = [[NSMutableDictionary alloc] init];
-    [crashParametersJSON setObject:exception.name forKey:@"exception_name"];
-    [crashParametersJSON setObject:exception.reason forKey:@"exception_reason"];
-    
-    NSMutableDictionary *crashJSON = [[NSMutableDictionary alloc] init];
-    [crashJSON setObject:self.config.host forKey:@"serial_number"];
-    [crashJSON setObject:crashParametersJSON forKey:@"crash"];
-    
-    NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"POST" URLString:self.config.host parameters:crashJSON error:nil];
-    [request setTimeoutInterval:3000];
-    
-    AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request success:nil failure:nil];
-    
-    [manager.operationQueue addOperation:operation];
+    [manager POST:self.config.host parameters:crashJSON success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
 - (void)handleException:(NSException *)exception {
     [self validateAndSaveCriticalApplicationData:exception];
-
+    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unhandled exception"
-            message:[NSString stringWithFormat:@"\nDebug details follow:\n%@\n%@",
-                    [exception reason],
-                    [exception userInfo][UncaughtExceptionHandlerAddressesKey]]
-            delegate:self
-            cancelButtonTitle:@"Quit"
-            otherButtonTitles:nil, nil];
-
+                                                    message:[NSString stringWithFormat:@"\nDebug details follow:\n%@\n%@",
+                                                             [exception reason],
+                                                             [exception userInfo][UncaughtExceptionHandlerAddressesKey]]
+                                                   delegate:self
+                                          cancelButtonTitle:@"Quit"
+                                          otherButtonTitles:nil, nil];
+    
     [alert show];
-
+    
     CFRunLoopRef runLoop = CFRunLoopGetCurrent();
     CFArrayRef allModes = CFRunLoopCopyAllModes(runLoop);
-
+    
     while (!dismissed) {
         for (NSString *mode in (__bridge NSArray*)allModes) {
             CFRunLoopRunInMode((__bridge CFStringRef)mode, 0.001, false);
         }
     }
-
+    
     CFRelease(allModes);
-
+    
     NSSetUncaughtExceptionHandler(NULL);
     signal(SIGABRT, SIG_DFL);
     signal(SIGILL, SIG_DFL);
@@ -139,7 +142,7 @@ const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
     signal(SIGFPE, SIG_DFL);
     signal(SIGBUS, SIG_DFL);
     signal(SIGPIPE, SIG_DFL);
-
+    
     if ([[exception name] isEqual:UncaughtExceptionHandlerSignalExceptionName]) {
         kill(getpid(), [[exception userInfo][UncaughtExceptionHandlerSignalKey] intValue]);
     } else {
@@ -151,37 +154,37 @@ const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
 
 void HandleException(NSException *exception) {
     int32_t exceptionCount = OSAtomicIncrement32(&UncaughtExceptionCount);
-
+    
     if (exceptionCount > UncaughtExceptionMaximum) {
         return;
     }
-
+    
     NSArray *callStack = [CheeseBug backtrace];
     NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary:[exception userInfo]];
     userInfo[UncaughtExceptionHandlerAddressesKey] = callStack;
-
+    
     [[[CheeseBug alloc] init] performSelectorOnMainThread:@selector(handleException:)
-            withObject: [NSException exceptionWithName:[exception name] reason:[exception reason] userInfo:userInfo]
-            waitUntilDone:YES];
+                                               withObject: [NSException exceptionWithName:[exception name] reason:[exception reason] userInfo:userInfo]
+                                            waitUntilDone:YES];
 }
 
 void SignalHandler(int signal) {
     int32_t exceptionCount = OSAtomicIncrement32(&UncaughtExceptionCount);
-
+    
     if (exceptionCount > UncaughtExceptionMaximum) {
         return;
     }
-
+    
     NSMutableDictionary *userInfo = [@{UncaughtExceptionHandlerSignalKey : @(signal)} mutableCopy];
-
+    
     NSArray *callStack = [CheeseBug backtrace];
     userInfo[UncaughtExceptionHandlerAddressesKey] = callStack;
-
+    
     [[[CheeseBug alloc] init] performSelectorOnMainThread:@selector(handleException:) withObject:
-            [NSException exceptionWithName:UncaughtExceptionHandlerSignalExceptionName
-                         reason: [NSString stringWithFormat:@"Signal %d was raised.", signal]
-                         userInfo: @{UncaughtExceptionHandlerSignalKey : @(signal)}]
-                         waitUntilDone:YES];
+     [NSException exceptionWithName:UncaughtExceptionHandlerSignalExceptionName
+                             reason: [NSString stringWithFormat:@"Signal %d was raised.", signal]
+                           userInfo: @{UncaughtExceptionHandlerSignalKey : @(signal)}]
+                                            waitUntilDone:YES];
 }
 
 void InstallUncaughtExceptionHandler() {
