@@ -13,7 +13,7 @@
     BOOL dismissed;
 }
 
-+ (Configuration*)configutation;
++ (Configuration*)configuration;
 + (void)initCheeseBug:(NSString*)serialNumber;
 
 @end
