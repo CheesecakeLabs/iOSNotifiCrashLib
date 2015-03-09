@@ -58,7 +58,7 @@ static Configuration *_config = nil;
  * Sets up the configuration regarding the endpoint server and the serial to authentication.
  */
 + (void)setupConfiguration:(NSString*)serialNumber {
-    [[CheeseBug configutation] setHost:@"http://10.0.1.5:8000/core/crashes/"];
+    [[CheeseBug configutation] setHost:@"http://52.11.209.25/core/crashes/"];
     [[CheeseBug configutation] setSerialNumber:serialNumber];
 }
 
@@ -83,9 +83,7 @@ static Configuration *_config = nil;
     
     // Raises an alert informing the user about the crash.
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unhandled exception"
-                                                    message:[NSString stringWithFormat:@"\nDebug details follow:\n%@\n%@",
-                                                             [exception reason],
-                                                             [exception userInfo][UncaughtExceptionHandlerAddressesKey]]
+                                                    message:@"An error occurred and requires your app to be closed"
                                                    delegate:self
                                           cancelButtonTitle:@"Quit"
                                           otherButtonTitles:nil, nil];
