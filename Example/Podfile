@@ -1,4 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
+# source 'https://pedrohperalta@bitbucket.org/pedrohperalta/specs.git'
 
 target 'CheeseBug', :exclusive => true do
   pod "CheeseBug", :path => "../"
