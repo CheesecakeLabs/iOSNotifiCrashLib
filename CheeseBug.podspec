@@ -1,38 +1,21 @@
-#
-# Be sure to run `pod lib lint CheeseBug.podspec' to ensure this is a
-# valid spec and remove all comments before submitting the spec.
-#
-# Any lines starting with a # are optional, but encouraged
-#
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = "CheeseBug"
-  s.version          = "0.1.0"
+  s.version          = "1.0"
   s.summary          = "A short description of CheeseBug."
   s.description      = <<-DESC
-                       An optional longer description of CheeseBug
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
-                       DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/CheeseBug"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+                        Library for crashes notification.
+                        DESC
+  s.homepage         = "http://ckl.io"
   s.license          = 'MIT'
   s.author           = { "Pedro Henrique Prates Peralta" => "pedro@ckl.io" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/CheeseBug.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/CheesecakeLabs/cheese-crash-ios.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'CheeseBug' => ['Pod/Assets/*.png']
-  }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.public_header_files = 'Pod/Classes/CheeseBug.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'AFNetworking', '~> 2.3'
 end
