@@ -1,6 +1,9 @@
 # OS X
 .DS_Store
 
+#AppCode
+Example/.idea/
+
 # Xcode
 build/
 *.pbxuser
@@ -15,6 +18,7 @@ xcuserdata
 *.xccheckout
 profile
 *.moved-aside
+.idea/
 DerivedData
 *.hmap
 *.ipa
@@ -29,4 +33,4 @@ DerivedData
 # Note: if you ignore the Pods directory, make sure to uncomment
 # `pod install` in .travis.yml
 #
-# Pods/
+Pods/
