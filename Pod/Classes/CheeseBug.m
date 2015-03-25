@@ -9,7 +9,7 @@
 #import "CheeseBug.h"
 #import "Crash.h"
 #import "AFNetworking.h"
-#import "NtfConstants.h"
+#import "NTFConstants.h"
 
 #include <libkern/OSAtomic.h>
 #include <execinfo.h>

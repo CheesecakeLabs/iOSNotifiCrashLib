@@ -20,7 +20,7 @@
 		11291D5B61F97DC548C36EB4 /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 66AB3BA4F1D675647E37C14E /* AFURLConnectionOperation.h */; };
 		149150D1963C1BC11180A51A /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC890100B5D812CD2E1F0B5 /* AFSecurityPolicy.m */; };
 		1C463C4B9977F19D62F7BDEB /* UIAlertView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CCD74788BA22C2E4D51DEF2 /* UIAlertView+AFNetworking.h */; };
-		1D328343975FC9A4E6CC1256 /* NtfConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 23A3C4006663D8F5AD6D95F9 /* NtfConstants.h */; };
+		1D328343975FC9A4E6CC1256 /* NTFConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 23A3C4006663D8F5AD6D95F9 /* NTFConstants.h */; };
 		2020FCED4D3973B0F92CE878 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = D18CD9D67F5AB29A4607EB63 /* UIRefreshControl+AFNetworking.m */; };
 		26B173BAC726F8E6925ADB00 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 589F8DB1E4DD1EC99A293FBD /* AFURLRequestSerialization.h */; };
 		27BC3F9788BB738992BA8561 /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = AE82F3ADB900D714E7BD0446 /* UIProgressView+AFNetworking.h */; };
@@ -90,7 +90,7 @@
 		ACE9C941521CAC45DE964EE9 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = FA25435D31E673CCAC102EE0 /* UIRefreshControl+AFNetworking.h */; };
 		ADB974FB8CCA09BDA27E08B0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03BED1F91C32643A241967B /* MobileCoreServices.framework */; };
 		AE97D9104897F296D045846E /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D33DEF9070C6021A22E61B8 /* AFURLSessionManager.m */; };
-		AF1E04084931F9F8B9202A39 /* NtfConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 23A3C4006663D8F5AD6D95F9 /* NtfConstants.h */; };
+		AF1E04084931F9F8B9202A39 /* NTFConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 23A3C4006663D8F5AD6D95F9 /* NTFConstants.h */; };
 		B245F304AD869190DE3C73C2 /* CheeseBug.h in Headers */ = {isa = PBXBuildFile; fileRef = B476F417F70E7433E705FBA0 /* CheeseBug.h */; };
 		B4BA970EC885DE72CE970584 /* Pods-CheeseBug-CheeseBug-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE010228E53F78785A6D55F3 /* Pods-CheeseBug-CheeseBug-dummy.m */; };
 		B66FA4C84F534A193BE858AB /* CheeseBug.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CC37553221E209A78F2EE28 /* CheeseBug.m */; };
@@ -196,7 +196,7 @@
 		1CF182032828DEEDFE339767 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		219327138E57C8C595EEC012 /* libPods-CheeseBug-KeepLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CheeseBug-KeepLayout.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		231AFBADFE37B7FC72D08789 /* Pods-CheeseBug-CheeseBug-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CheeseBug-CheeseBug-prefix.pch"; sourceTree = "<group>"; };
-		23A3C4006663D8F5AD6D95F9 /* NtfConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NtfConstants.h; path = Pod/Classes/NtfConstants.h; sourceTree = "<group>"; };
+		23A3C4006663D8F5AD6D95F9 /* NTFConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NTFConstants.h; path = Pod/Classes/NTFConstants.h; sourceTree = "<group>"; };
 		26361CC72A42A545F569E02F /* KeepLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KeepLayoutConstraint.h; path = Sources/KeepLayoutConstraint.h; sourceTree = "<group>"; };
 		287ECD63902E776798986710 /* Pods-Tests-AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-AFNetworking.xcconfig"; path = "../Pods-Tests-AFNetworking/Pods-Tests-AFNetworking.xcconfig"; sourceTree = "<group>"; };
 		28CE182B3F21BBA65CD192D9 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
@@ -586,7 +586,7 @@
 				0CC37553221E209A78F2EE28 /* CheeseBug.m */,
 				37006665F377B1FF9FA29FE1 /* Configuration.h */,
 				1A7B72F78540373439F01085 /* Configuration.m */,
-				23A3C4006663D8F5AD6D95F9 /* NtfConstants.h */,
+				23A3C4006663D8F5AD6D95F9 /* NTFConstants.h */,
 				5D81F225CC11487A76AFE986 /* Crash.h */,
 				C10E038D27C6FE24BEF80119 /* Crash.m */,
 				FB608190C95666A67CD68131 /* Support Files */,
@@ -642,7 +642,7 @@
 			files = (
 				55C9A428ECC77FB2C01B50E6 /* CheeseBug.h in Headers */,
 				ECD1EE8367C458E8FB8E7D13 /* Configuration.h in Headers */,
-				AF1E04084931F9F8B9202A39 /* NtfConstants.h in Headers */,
+				AF1E04084931F9F8B9202A39 /* NTFConstants.h in Headers */,
 				7D91AC0D162CA61399E8D4E9 /* Crash.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -653,7 +653,7 @@
 			files = (
 				B245F304AD869190DE3C73C2 /* CheeseBug.h in Headers */,
 				85A93D7389B9463C55098604 /* Configuration.h in Headers */,
-				1D328343975FC9A4E6CC1256 /* NtfConstants.h in Headers */,
+				1D328343975FC9A4E6CC1256 /* NTFConstants.h in Headers */,
 				824105940E78B76160C60705 /* Crash.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
