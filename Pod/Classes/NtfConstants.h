@@ -21,7 +21,7 @@ static const int32_t UncaughtExceptionMaximum = 10;
 static const NSInteger UncaughtExceptionHandlerSkipAddressCount = 4;
 static const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
 
-static NSString* const Host = @"http://52.11.209.25/core/crashes/";
+static NSString* const Host = @"http://52.11.209.25/core/crashes/";     // AWS
 
 static NSString* const AlertTitle = @"Unhandled exception";
 static NSString* const AlertMessage = @"An error occurred and requires your app to be closed";

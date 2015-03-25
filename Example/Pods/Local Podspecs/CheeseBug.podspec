@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name             = "CheeseBug"
-  s.version          = "1.0"
-  s.summary          = "A short description of CheeseBug."
+  s.version          = "1.1"
+  s.summary          = "Library for crashes notification."
   s.description      = <<-DESC
-                        Library for crashes notification.
+                        Library that sends crashes information to a remote server.
                         DESC
   s.homepage         = "http://ckl.io"
   s.license          = 'MIT'
@@ -15,7 +15,8 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Pod/Classes/**/*'
 
-  # s.public_header_files = 'Pod/Classes/CheeseBug.h'
+  s.public_header_files = 'Pod/Classes/*.h'
+
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'AFNetworking', '~> 2.0'
 end
