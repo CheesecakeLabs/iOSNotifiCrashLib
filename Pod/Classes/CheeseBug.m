@@ -9,7 +9,7 @@
 #import "CheeseBug.h"
 #import "Crash.h"
 #import "AFNetworking.h"
-#import "Constants.h"
+#import "NtfConstants.h"
 
 #include <libkern/OSAtomic.h>
 #include <execinfo.h>
@@ -65,6 +65,9 @@ static Configuration *_config = nil;
                                           otherButtonTitles:nil];
 
     [alert show];
+    
+    // Forces the app to close in a maximum of 5 seconds.
+    [self performSelector:@selector(closeAlert) withObject:nil afterDelay:5];
 
     // Loop the thread enters and uses to run event handlers
     CFRunLoopRef runLoop = CFRunLoopGetCurrent();
@@ -167,6 +170,10 @@ static void signalHandler(int signal) {
  * Releases the alert window and allow the application to finish.
  */
 - (void)alertView:(UIAlertView *)anAlertView clickedButtonAtIndex:(NSInteger)anIndex {
+    [self closeAlert];
+}
+
+- (void)closeAlert {
     dismissed = YES;
 }
 

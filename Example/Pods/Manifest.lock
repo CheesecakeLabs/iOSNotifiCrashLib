@@ -20,15 +20,17 @@ PODS:
   - AFNetworking/UIKit (2.5.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - CheeseBug (1.0):
-    - AFNetworking (~> 2.3)
+  - CheeseBug (1.1):
+    - AFNetworking (~> 2.0)
   - KeepLayout (1.6.0)
 
 DEPENDENCIES:
-  - CheeseBug
+  - CheeseBug (from `../`)
   - KeepLayout (from `https://github.com/iMartinKiss/KeepLayout.git`, tag `v1.6.0`)
 
 EXTERNAL SOURCES:
+  CheeseBug:
+    :path: ../
   KeepLayout:
     :git: https://github.com/iMartinKiss/KeepLayout.git
     :tag: v1.6.0
@@ -40,7 +42,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
-  CheeseBug: ef484b62873803d8171656708116b8dc6ac36b74
+  CheeseBug: ad6415ce9fa2915c8a35b87891d05aaedc51728f
   KeepLayout: f6364def4921aca9853b91d998b5737a7210fd6a
 
 COCOAPODS: 0.35.0
