@@ -1,28 +1,28 @@
 //
-//  CheeseBugMainViewController.m
-//  CheeseBug
+//  NotifiCrashMainViewController.m
+//  NotifiCrash
 //
 //  Created by Cheesecake Labs on 2/11/15.
 //  Copyright (c) 2015 Cheesecake Labs. All rights reserved.
 //
 
-#import "CheeseBugMainViewController.h"
+#import "NotifiCrashMainViewController.h"
 #import <KeepLayout.h>
 
-@interface CheeseBugMainViewController ()
+@interface NotifiCrashMainViewController ()
 
-@property(strong, nonatomic) CheeseBugMainView *cheeseBugMainView;
+@property(strong, nonatomic) NotifiCrashMainView *cheeseBugMainView;
 
 @end
 
-@implementation CheeseBugMainViewController
+@implementation NotifiCrashMainViewController
 
 #pragma mark - View Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.cheeseBugMainView = [[CheeseBugMainView alloc] init];
+    self.cheeseBugMainView = [[NotifiCrashMainView alloc] init];
     [self.cheeseBugMainView setUserInteractionEnabled:YES];
     [self.cheeseBugMainView setDelegate:self];
     

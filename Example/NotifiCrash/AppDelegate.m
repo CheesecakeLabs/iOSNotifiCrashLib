@@ -1,13 +1,13 @@
 //
-//  CKLAppDelegate.m
-//  CheeseBug
+//  AppDelegate.m
+//  NotifiCrash
 //
 //  Created by CocoaPods on 02/11/2015.
 //  Copyright (c) 2014 Cheesecake Labs. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import <CheeseBug.h>
+#import <NotifiCrash.h>
 
 @implementation AppDelegate
 
@@ -18,13 +18,13 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     // Initiates CheeseBugMainViewController.
-    self.cheeseBugMainViewController = [[CheeseBugMainViewController alloc] init];
+    self.cheeseBugMainViewController = [[NotifiCrashMainViewController alloc] init];
     
     [self.window setRootViewController:_cheeseBugMainViewController];
     [self.window makeKeyAndVisible];
 
     // Initializes the library which will handle the uncaught exceptions.
-    [CheeseBug initCheeseBug:@"a67da05ba5d6f676452d07500cb80a"];
+    [NotifiCrash initCheeseBug:@"04da54e089b7bd11c8c5fb9ed40db0"];
 
     return YES;
 }

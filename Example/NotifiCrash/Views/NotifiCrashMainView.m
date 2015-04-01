@@ -1,16 +1,16 @@
 //
-//  CheeseBugMainView.m
-//  CheeseBug
+//  NotifiCrashMainView.m
+//  NotifiCrash
 //
 //  Created by Cheesecake Labs on 2/11/15.
 //  Copyright (c) 2015 Cheesecake Labs. All rights reserved.
 //
 
-#import "CheeseBugMainView.h"
-#import "CheeseBugMainViewController.h"
+#import "NotifiCrashMainView.h"
+#import "NotifiCrashMainViewController.h"
 #import <KeepLayout.h>
 
-@implementation CheeseBugMainView
+@implementation NotifiCrashMainView
 
 - (id)init {
     self = [super init];

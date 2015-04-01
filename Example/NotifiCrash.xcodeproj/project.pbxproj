@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15D39D6A08BF8FC8DB444D88 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CDB69B6FBB5529DA5319C2 /* libPods-Tests.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -15,14 +14,14 @@
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* AppDelegate.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
-		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		EBE85FC51A8BB102005E072F /* CheeseBugMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE85FC41A8BB102005E072F /* CheeseBugMainView.m */; };
-		EBE85FC81A8BB18F005E072F /* CheeseBugMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE85FC71A8BB18F005E072F /* CheeseBugMainViewController.m */; };
-		EBFEEF351A8CFB9300EC40FD /* libPods-CheeseBug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFEEF341A8CFB9300EC40FD /* libPods-CheeseBug.a */; };
+		95B32113436BE30D7F226806 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6C5D539A3611041093C1D14 /* libPods-Tests.a */; };
+		DA9794BB69552DAA96D625F7 /* libPods-NotifiCrash.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32166F2422E3CD802155D499 /* libPods-NotifiCrash.a */; };
+		EBE85FC51A8BB102005E072F /* NotifiCrashMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE85FC41A8BB102005E072F /* NotifiCrashMainView.m */; };
+		EBE85FC81A8BB18F005E072F /* NotifiCrashMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE85FC71A8BB18F005E072F /* NotifiCrashMainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,37 +36,34 @@
 
 /* Begin PBXFileReference section */
 		1B46A5C613D925424491C4CC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		43CDB69B6FBB5529DA5319C2 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32166F2422E3CD802155D499 /* libPods-NotifiCrash.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NotifiCrash.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		525344307EEC614D43BA8665 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
-		6003F58A195388D20070C39A /* CheeseBug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheeseBug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F58A195388D20070C39A /* NotifiCrash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotifiCrash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6003F595195388D20070C39A /* CheeseBug-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CheeseBug-Info.plist"; sourceTree = "<group>"; };
+		6003F595195388D20070C39A /* NotifiCrash-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NotifiCrash-Info.plist"; sourceTree = "<group>"; };
 		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6003F59B195388D20070C39A /* CheeseBug-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CheeseBug-Prefix.pch"; sourceTree = "<group>"; };
+		6003F59B195388D20070C39A /* NotifiCrash-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NotifiCrash-Prefix.pch"; sourceTree = "<group>"; };
 		6003F59C195388D20070C39A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		7A456DC69A8000C9BEE6CFB3 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		A4C4224DAAA3E2F68058A7FB /* Pods-CheeseBug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheeseBug.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheeseBug/Pods-CheeseBug.debug.xcconfig"; sourceTree = "<group>"; };
-		BA3EF4AE11207417C2A7EEFA /* CheeseBug.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CheeseBug.podspec; path = ../CheeseBug.podspec; sourceTree = "<group>"; };
-		C15EFC3AAE04072F1E8AD0F3 /* libPods-CheeseBug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CheeseBug.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA8C7838D1B5D6FB9DD5293F /* Pods-CheeseBug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheeseBug.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheeseBug/Pods-CheeseBug.release.xcconfig"; sourceTree = "<group>"; };
+		810050F12AC195EF3AB115C6 /* Pods-NotifiCrash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotifiCrash.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotifiCrash/Pods-NotifiCrash.release.xcconfig"; sourceTree = "<group>"; };
+		AF860CFDC8BB59D9EFD2A148 /* Pods-NotifiCrash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotifiCrash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotifiCrash/Pods-NotifiCrash.debug.xcconfig"; sourceTree = "<group>"; };
+		BA3EF4AE11207417C2A7EEFA /* NotifiCrash.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = NotifiCrash.podspec; path = ../NotifiCrash.podspec; sourceTree = "<group>"; };
 		EB80A97031F93DC51DB38C47 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		EBE85FC31A8BB102005E072F /* CheeseBugMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheeseBugMainView.h; sourceTree = "<group>"; };
-		EBE85FC41A8BB102005E072F /* CheeseBugMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheeseBugMainView.m; sourceTree = "<group>"; };
-		EBE85FC61A8BB18F005E072F /* CheeseBugMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheeseBugMainViewController.h; sourceTree = "<group>"; };
-		EBE85FC71A8BB18F005E072F /* CheeseBugMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheeseBugMainViewController.m; sourceTree = "<group>"; };
-		EBFEEF321A8CFB6F00EC40FD /* libPods-CheeseBug-CheeseBug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-CheeseBug-CheeseBug.a"; path = "Pods/build/Debug-iphoneos/libPods-CheeseBug-CheeseBug.a"; sourceTree = "<group>"; };
-		EBFEEF341A8CFB9300EC40FD /* libPods-CheeseBug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-CheeseBug.a"; path = "Pods/build/Debug-iphoneos/libPods-CheeseBug.a"; sourceTree = "<group>"; };
+		EBE85FC31A8BB102005E072F /* NotifiCrashMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifiCrashMainView.h; sourceTree = "<group>"; };
+		EBE85FC41A8BB102005E072F /* NotifiCrashMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifiCrashMainView.m; sourceTree = "<group>"; };
+		EBE85FC61A8BB18F005E072F /* NotifiCrashMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifiCrashMainViewController.h; sourceTree = "<group>"; };
+		EBE85FC71A8BB18F005E072F /* NotifiCrashMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifiCrashMainViewController.m; sourceTree = "<group>"; };
+		F6C5D539A3611041093C1D14 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +74,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				EBFEEF351A8CFB9300EC40FD /* libPods-CheeseBug.a in Frameworks */,
+				DA9794BB69552DAA96D625F7 /* libPods-NotifiCrash.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,10 +82,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				15D39D6A08BF8FC8DB444D88 /* libPods-Tests.a in Frameworks */,
+				95B32113436BE30D7F226806 /* libPods-Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,10 +94,10 @@
 		52BAD320AD218FD42C1732F2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A4C4224DAAA3E2F68058A7FB /* Pods-CheeseBug.debug.xcconfig */,
-				CA8C7838D1B5D6FB9DD5293F /* Pods-CheeseBug.release.xcconfig */,
 				7A456DC69A8000C9BEE6CFB3 /* Pods-Tests.debug.xcconfig */,
 				525344307EEC614D43BA8665 /* Pods-Tests.release.xcconfig */,
+				AF860CFDC8BB59D9EFD2A148 /* Pods-NotifiCrash.debug.xcconfig */,
+				810050F12AC195EF3AB115C6 /* Pods-NotifiCrash.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -111,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
-				6003F593195388D20070C39A /* CheeseBug */,
+				6003F593195388D20070C39A /* NotifiCrash */,
 				6003F5B5195388D20070C39A /* Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
@@ -122,7 +117,7 @@
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58A195388D20070C39A /* CheeseBug.app */,
+				6003F58A195388D20070C39A /* NotifiCrash.app */,
 				6003F5AE195388D20070C39A /* Tests.xctest */,
 			);
 			name = Products;
@@ -131,19 +126,16 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EBFEEF341A8CFB9300EC40FD /* libPods-CheeseBug.a */,
-				EBFEEF321A8CFB6F00EC40FD /* libPods-CheeseBug-CheeseBug.a */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
-				6003F5AF195388D20070C39A /* XCTest.framework */,
-				C15EFC3AAE04072F1E8AD0F3 /* libPods-CheeseBug.a */,
-				43CDB69B6FBB5529DA5319C2 /* libPods-Tests.a */,
+				32166F2422E3CD802155D499 /* libPods-NotifiCrash.a */,
+				F6C5D539A3611041093C1D14 /* libPods-Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6003F593195388D20070C39A /* CheeseBug */ = {
+		6003F593195388D20070C39A /* NotifiCrash */ = {
 			isa = PBXGroup;
 			children = (
 				EBE85FC21A8BB085005E072F /* Models */,
@@ -156,16 +148,16 @@
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
-			path = CheeseBug;
+			path = NotifiCrash;
 			sourceTree = "<group>";
 		};
 		6003F594195388D20070C39A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6003F595195388D20070C39A /* CheeseBug-Info.plist */,
+				6003F595195388D20070C39A /* NotifiCrash-Info.plist */,
 				6003F596195388D20070C39A /* InfoPlist.strings */,
 				6003F599195388D20070C39A /* main.m */,
-				6003F59B195388D20070C39A /* CheeseBug-Prefix.pch */,
+				6003F59B195388D20070C39A /* NotifiCrash-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -192,7 +184,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				BA3EF4AE11207417C2A7EEFA /* CheeseBug.podspec */,
+				BA3EF4AE11207417C2A7EEFA /* NotifiCrash.podspec */,
 				1B46A5C613D925424491C4CC /* README.md */,
 				EB80A97031F93DC51DB38C47 /* LICENSE */,
 			);
@@ -202,8 +194,8 @@
 		EBE85FBE1A8BB02B005E072F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EBE85FC31A8BB102005E072F /* CheeseBugMainView.h */,
-				EBE85FC41A8BB102005E072F /* CheeseBugMainView.m */,
+				EBE85FC31A8BB102005E072F /* NotifiCrashMainView.h */,
+				EBE85FC41A8BB102005E072F /* NotifiCrashMainView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,8 +203,8 @@
 		EBE85FBF1A8BB04B005E072F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EBE85FC61A8BB18F005E072F /* CheeseBugMainViewController.h */,
-				EBE85FC71A8BB18F005E072F /* CheeseBugMainViewController.m */,
+				EBE85FC61A8BB18F005E072F /* NotifiCrashMainViewController.h */,
+				EBE85FC71A8BB18F005E072F /* NotifiCrashMainViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -241,9 +233,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6003F589195388D20070C39A /* CheeseBug */ = {
+		6003F589195388D20070C39A /* NotifiCrash */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "CheeseBug" */;
+			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "NotifiCrash" */;
 			buildPhases = (
 				4A145FB98AFD405B20718E00 /* Check Pods Manifest.lock */,
 				6003F586195388D20070C39A /* Sources */,
@@ -255,9 +247,9 @@
 			);
 			dependencies = (
 			);
-			name = CheeseBug;
+			name = NotifiCrash;
 			productName = CheeseBug;
-			productReference = 6003F58A195388D20070C39A /* CheeseBug.app */;
+			productReference = 6003F58A195388D20070C39A /* NotifiCrash.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6003F5AD195388D20070C39A /* Tests */ = {
@@ -298,7 +290,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "CheeseBug" */;
+			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "NotifiCrash" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -311,7 +303,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6003F589195388D20070C39A /* CheeseBug */,
+				6003F589195388D20070C39A /* NotifiCrash */,
 				6003F5AD195388D20070C39A /* Tests */,
 			);
 		};
@@ -395,7 +387,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CheeseBug/Pods-CheeseBug-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NotifiCrash/Pods-NotifiCrash-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -407,8 +399,8 @@
 			files = (
 				6003F59E195388D20070C39A /* AppDelegate.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				EBE85FC51A8BB102005E072F /* CheeseBugMainView.m in Sources */,
-				EBE85FC81A8BB18F005E072F /* CheeseBugMainViewController.m in Sources */,
+				EBE85FC51A8BB102005E072F /* NotifiCrashMainView.m in Sources */,
+				EBE85FC81A8BB18F005E072F /* NotifiCrashMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +417,7 @@
 /* Begin PBXTargetDependency section */
 		6003F5B4195388D20070C39A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6003F589195388D20070C39A /* CheeseBug */;
+			target = 6003F589195388D20070C39A /* NotifiCrash */;
 			targetProxy = 6003F5B3195388D20070C39A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -524,20 +516,20 @@
 		};
 		6003F5C0195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4C4224DAAA3E2F68058A7FB /* Pods-CheeseBug.debug.xcconfig */;
+			baseConfigurationReference = AF860CFDC8BB59D9EFD2A148 /* Pods-NotifiCrash.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CheeseBug/CheeseBug-Prefix.pch";
-				INFOPLIST_FILE = "CheeseBug/CheeseBug-Info.plist";
+				GCC_PREFIX_HEADER = "NotifiCrash/NotifiCrash-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/NotifiCrash/NotifiCrash-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NotifiCrash;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -545,20 +537,20 @@
 		};
 		6003F5C1195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA8C7838D1B5D6FB9DD5293F /* Pods-CheeseBug.release.xcconfig */;
+			baseConfigurationReference = 810050F12AC195EF3AB115C6 /* Pods-NotifiCrash.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CheeseBug/CheeseBug-Prefix.pch";
-				INFOPLIST_FILE = "CheeseBug/CheeseBug-Info.plist";
+				GCC_PREFIX_HEADER = "NotifiCrash/NotifiCrash-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/NotifiCrash/NotifiCrash-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NotifiCrash;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -568,7 +560,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7A456DC69A8000C9BEE6CFB3 /* Pods-Tests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CheeseBug.app/CheeseBug";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NotifiCrash.app/NotifiCrash";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -582,7 +574,7 @@
 				);
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NotifiCrash.app/NotifiCrash";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -591,7 +583,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 525344307EEC614D43BA8665 /* Pods-Tests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CheeseBug.app/CheeseBug";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NotifiCrash.app/NotifiCrash";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -601,7 +593,7 @@
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NotifiCrash.app/NotifiCrash";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -609,7 +601,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6003F585195388D10070C39A /* Build configuration list for PBXProject "CheeseBug" */ = {
+		6003F585195388D10070C39A /* Build configuration list for PBXProject "NotifiCrash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6003F5BD195388D20070C39A /* Debug */,
@@ -618,7 +610,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "CheeseBug" */ = {
+		6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "NotifiCrash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6003F5C0195388D20070C39A /* Debug */,

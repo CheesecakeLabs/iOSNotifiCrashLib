@@ -6,15 +6,14 @@
 //
 //
 
-#import "CheeseBug.h"
+#import "NotifiCrash.h"
 #import "Crash.h"
-#import "AFNetworking.h"
 #import "NTFConstants.h"
 
 #include <libkern/OSAtomic.h>
 #include <execinfo.h>
 
-@implementation CheeseBug
+@implementation NotifiCrash
 
 #pragma mark - Library setup
 
@@ -39,16 +38,16 @@ static Configuration *_config = nil;
  * interface between the library and the app which uses it.
  */
 + (void)initCheeseBug:(NSString *)serialNumber {
-    [CheeseBug setupConfiguration:serialNumber];
-    [CheeseBug installUncaughtExceptionHandler];
+    [NotifiCrash setupConfiguration:serialNumber];
+    [NotifiCrash installUncaughtExceptionHandler];
 }
 
 /*
  * Sets up the configuration regarding the endpoint server and the serial to authentication.
  */
 + (void)setupConfiguration:(NSString *)serialNumber {
-    [[CheeseBug configuration] setHost:Host];
-    [[CheeseBug configuration] setSerialNumber:serialNumber];
+    [[NotifiCrash configuration] setHost:Host];
+    [[NotifiCrash configuration] setSerialNumber:serialNumber];
 }
 
 /*
@@ -103,28 +102,28 @@ static Configuration *_config = nil;
  * Function pointed by the UncaughtExceptionHandler at the library installation.
  */
 static void exceptionHandler(NSException *exception) {
-    if ([CheeseBug reachMaximum])
+    if ([NotifiCrash reachMaximum])
         return;
 
     NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary:[exception userInfo]];
-    userInfo[UncaughtExceptionHandlerAddressesKey] = [CheeseBug backtrace];
+    userInfo[UncaughtExceptionHandlerAddressesKey] = [NotifiCrash backtrace];
 
-    [CheeseBug handlerError:userInfo name:[exception name] reason:[exception reason]];
+    [NotifiCrash handlerError:userInfo name:[exception name] reason:[exception reason]];
 }
 
 /*
  * Function pointed for the system to deal with critical signals emitted.
  */
 static void signalHandler(int signal) {
-    if ([CheeseBug reachMaximum])
+    if ([NotifiCrash reachMaximum])
         return;
 
     NSMutableDictionary *userInfo = [@{UncaughtExceptionHandlerSignalKey : @(signal)} mutableCopy];
-    userInfo[UncaughtExceptionHandlerAddressesKey] = [CheeseBug backtrace];
+    userInfo[UncaughtExceptionHandlerAddressesKey] = [NotifiCrash backtrace];
 
     NSString *reason = [NSString stringWithFormat:@"Signal %d was raised.", signal];
 
-    [CheeseBug handlerError:userInfo name:UncaughtExceptionHandlerSignalExceptionName reason:reason];
+    [NotifiCrash handlerError:userInfo name:UncaughtExceptionHandlerSignalExceptionName reason:reason];
 }
 
 /*
@@ -181,30 +180,36 @@ static void signalHandler(int signal) {
  * Performs the installation of the handlers for eventual crashes in the application.
  */
 - (void)notifyCriticalApplicationData:(NSException *)exception {
-
+    
     // Creates a crash object which contains the data log.
     Crash *crash = [[Crash alloc] init];
     crash.crashName = exception.name;
     crash.crashReason = exception.reason;
-
+    
     // Fill the dictionary with data regarding the crash itself.
     NSMutableDictionary *crashParametersJSON = [[NSMutableDictionary alloc] init];
     crashParametersJSON[@"exception_name"] = crash.crashName;
     crashParametersJSON[@"exception_reason"] = crash.crashReason;
-
+    
     // Fill the dictionary which corresponds the full JSON sent to the server.
     NSMutableDictionary *crashJSON = [[NSMutableDictionary alloc] init];
-    crashJSON[@"serial_number"] = [[CheeseBug configuration] serialNumber];
+    crashJSON[@"serial_number"] = [[NotifiCrash configuration] serialNumber];
     crashJSON[@"crash"] = crashParametersJSON;
-
-    // Performs the HTTP POST setting the serializer to deal with JSON types.
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
-    [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
-    [manager POST:[[CheeseBug configuration] host] parameters:crashJSON success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    }     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
+    
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:crashJSON options:0 error:nil];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[[NotifiCrash configuration] host]]];
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:postData];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if ([data length] == 0 && error == nil) {
+            NSLog(@"Crash successfully posted");
+        } else if (error != nil) {
+            NSLog(@"There was a download error");
+        }
     }];
 }
 
@@ -212,7 +217,7 @@ static void signalHandler(int signal) {
  * Calls the functions which will deal with the application ending passing some useful information regarding the crash.
  */
 + (void)handlerError:(NSMutableDictionary *)userInfo name:(NSString *)name reason:(NSString *)reason {
-    [[[CheeseBug alloc] init] performSelectorOnMainThread:@selector(handleException:)
+    [[[NotifiCrash alloc] init] performSelectorOnMainThread:@selector(handleException:)
                                                withObject:[NSException exceptionWithName:name reason:reason userInfo:userInfo]
                                             waitUntilDone:YES];
 }

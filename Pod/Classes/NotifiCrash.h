@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Configuration.h"
 
-@interface CheeseBug : NSObject {
+@interface NotifiCrash : NSObject {
     BOOL dismissed;
 }
 
