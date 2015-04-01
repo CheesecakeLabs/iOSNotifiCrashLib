@@ -10,7 +10,8 @@
 
 @implementation Configuration
 
-- (id)init {
+- (id)init
+{
     self = [super init];
     return self;
 }

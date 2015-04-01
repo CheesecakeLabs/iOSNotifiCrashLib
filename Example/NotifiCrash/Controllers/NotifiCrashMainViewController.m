@@ -19,7 +19,8 @@
 
 #pragma mark - View Lifecycle
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     self.cheeseBugMainView = [[NotifiCrashMainView alloc] init];
@@ -29,14 +30,16 @@
     [self.view addSubview:self.cheeseBugMainView];
 }
 
-- (void)viewWillLayoutSubviews {
+- (void)viewWillLayoutSubviews
+{
     [super viewWillLayoutSubviews];
     self.cheeseBugMainView.keepInsets.equal = 0;
 }
 
 #pragma mark - User Interaction
 
-- (void)divideByZero:(UIButton *)sender {
+- (void)divideByZero:(UIButton *)sender
+{
 //    int a = 1;
 //    int b = 0;
 //    NSLog(@"%d", a/b);

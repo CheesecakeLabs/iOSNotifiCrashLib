@@ -10,7 +10,8 @@
 
 @implementation Crash
 
-- (id)init {
+- (id)init
+{
     self = [super init];
     return self;
 }

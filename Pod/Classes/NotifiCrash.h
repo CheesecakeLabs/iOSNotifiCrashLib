@@ -1,5 +1,5 @@
 //
-//  CheeseBug.h
+//  NotifiCrash.h
 //  Pods
 //
 //  Created by Cheesecake Labs on 2/12/15.
@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "Configuration.h"
 
-@interface NotifiCrash : NSObject {
+@interface NotifiCrash : NSObject
+{
     BOOL dismissed;
 }
 
 + (Configuration*)configuration;
-+ (void)initCheeseBug:(NSString*)serialNumber;
++ (void)initWithSerialNumber:(NSString*)serialNumber;
 
 @end

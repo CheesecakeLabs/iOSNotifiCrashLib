@@ -1,5 +1,5 @@
 //
-//  CheeseBug.h
+//  NotifiCrash.m
 //  Pods
 //
 //  Created by Cheesecake Labs on 2/12/15.
@@ -9,9 +9,7 @@
 #import "NotifiCrash.h"
 #import "Crash.h"
 #import "NTFConstants.h"
-
 #include <libkern/OSAtomic.h>
-#include <execinfo.h>
 
 @implementation NotifiCrash
 
@@ -19,12 +17,13 @@
 
 // Represents a configuration that contains some useful information for the library to work.
 static Configuration *_config = nil;
-
+static Crash *_crash = nil;
 
 /*
  * Gets the library configuration object.
  */
-+ (Configuration *)configuration {
++ (Configuration *)configuration
+{
     if (_config == nil) {
         _config = [[Configuration alloc] init];
     }
@@ -33,11 +32,24 @@ static Configuration *_config = nil;
 }
 
 /*
+ * Gets the crash object.
+ */
++ (Crash *)crash
+{
+    if (_crash == nil) {
+        _crash = [[Crash alloc] init];
+    }
+
+    return _crash;
+}
+
+/*
  * Initializes the library for the given application serial. 
  * This function implements the Facade Patter by being the 
  * interface between the library and the app which uses it.
  */
-+ (void)initCheeseBug:(NSString *)serialNumber {
++ (void)initWithSerialNumber:(NSString *)serialNumber
+{
     [NotifiCrash setupConfiguration:serialNumber];
     [NotifiCrash installUncaughtExceptionHandler];
 }
@@ -45,15 +57,62 @@ static Configuration *_config = nil;
 /*
  * Sets up the configuration regarding the endpoint server and the serial to authentication.
  */
-+ (void)setupConfiguration:(NSString *)serialNumber {
++ (void)setupConfiguration:(NSString *)serialNumber
+{
     [[NotifiCrash configuration] setHost:Host];
     [[NotifiCrash configuration] setSerialNumber:serialNumber];
 }
 
 /*
+ * Function pointed by the UncaughtExceptionHandler at the library installation.
+ */
+static void exceptionHandler(NSException *exception)
+{
+    if ([NotifiCrash reachMaximum])
+        return;
+
+    [NotifiCrash crash].stackSymbols = [exception callStackSymbols];
+
+    [NotifiCrash handlerError:nil name:[exception name] reason:[exception reason]];
+}
+
+/*
+ * Function pointed for the system to deal with critical signals emitted.
+ */
+static void signalHandler(int signal)
+{
+    if ([NotifiCrash reachMaximum])
+        return;
+
+    NSString *reason = [NSString stringWithFormat:@"Signal %d was raised.", signal];
+
+    [NotifiCrash handlerError:nil name:UncaughtExceptionHandlerSignalExceptionName reason:reason];
+}
+
+/*
+ * Checks if the signal/exception occurred is known by the system.
+ */
++ (BOOL)reachMaximum
+{
+    int32_t exceptionCount = OSAtomicIncrement32(&UncaughtExceptionCount);
+    return exceptionCount > UncaughtExceptionMaximum;
+}
+
+/*
+ * Calls the functions which will deal with the application ending passing some useful information regarding the crash.
+ */
++ (void)handlerError:(NSMutableDictionary *)userInfo name:(NSString *)name reason:(NSString *)reason
+{
+    [[[NotifiCrash alloc] init] performSelectorOnMainThread:@selector(handleException:)
+                                                 withObject:[NSException exceptionWithName:name reason:reason userInfo:userInfo]
+                                              waitUntilDone:YES];
+}
+
+/*
  * Deals how the app will behaviour in the moment right before it crashes for good.
  */
-- (void)handleException:(NSException *)exception {
+- (void)handleException:(NSException *)exception
+{
     [self notifyCriticalApplicationData:exception];
 
     // Raises an alert informing the user about the crash.
@@ -64,7 +123,7 @@ static Configuration *_config = nil;
                                           otherButtonTitles:nil];
 
     [alert show];
-    
+
     // Forces the app to close in a maximum of 5 seconds.
     [self performSelector:@selector(closeAlert) withObject:nil afterDelay:5];
 
@@ -99,37 +158,10 @@ static Configuration *_config = nil;
 }
 
 /*
- * Function pointed by the UncaughtExceptionHandler at the library installation.
- */
-static void exceptionHandler(NSException *exception) {
-    if ([NotifiCrash reachMaximum])
-        return;
-
-    NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary:[exception userInfo]];
-    userInfo[UncaughtExceptionHandlerAddressesKey] = [NotifiCrash backtrace];
-
-    [NotifiCrash handlerError:userInfo name:[exception name] reason:[exception reason]];
-}
-
-/*
- * Function pointed for the system to deal with critical signals emitted.
- */
-static void signalHandler(int signal) {
-    if ([NotifiCrash reachMaximum])
-        return;
-
-    NSMutableDictionary *userInfo = [@{UncaughtExceptionHandlerSignalKey : @(signal)} mutableCopy];
-    userInfo[UncaughtExceptionHandlerAddressesKey] = [NotifiCrash backtrace];
-
-    NSString *reason = [NSString stringWithFormat:@"Signal %d was raised.", signal];
-
-    [NotifiCrash handlerError:userInfo name:UncaughtExceptionHandlerSignalExceptionName reason:reason];
-}
-
-/*
  * Performs the installation of the handlers for eventual crashes in the application.
  */
-+ (void)installUncaughtExceptionHandler {
++ (void)installUncaughtExceptionHandler
+{
     // exceptionHandler and signalHandler are pointer for functions which will handle exceptions and signals respectively.
     NSSetUncaughtExceptionHandler(&exceptionHandler);
     signal(SIGABRT, signalHandler);
@@ -141,55 +173,32 @@ static void signalHandler(int signal) {
 }
 
 /*
- * Get data about the error occurred.
- */
-+ (NSArray *)backtrace {
-    // Create an array of pointers and write the function return addresses of the current call stack to it.
-    void *callstack[128];
-    int frames = backtrace(callstack, 128);
-
-    // Attempts to transform the call stack obtained into an array of human-readable strings.
-    char **strs = backtrace_symbols(callstack, frames);
-
-    NSMutableArray *backtrace = [NSMutableArray arrayWithCapacity:(NSUInteger)frames];
-    int uncaughtExceptionRange = UncaughtExceptionHandlerSkipAddressCount + UncaughtExceptionHandlerReportAddressCount;
-
-    // Iterates through the range of exceptions and adds them to an array.
-    for (int i = UncaughtExceptionHandlerSkipAddressCount; i < uncaughtExceptionRange; i++) {
-        [backtrace addObject:[NSString stringWithUTF8String:strs[i]]];
-    }
-
-    // Manually dealloc the stack strings after copying them to the array.
-    free(strs);
-
-    return backtrace;
-}
-
-/*
  * Releases the alert window and allow the application to finish.
  */
-- (void)alertView:(UIAlertView *)anAlertView clickedButtonAtIndex:(NSInteger)anIndex {
+- (void)alertView:(UIAlertView *)anAlertView clickedButtonAtIndex:(NSInteger)anIndex
+{
     [self closeAlert];
 }
 
-- (void)closeAlert {
+- (void)closeAlert
+{
     dismissed = YES;
 }
 
 /*
  * Performs the installation of the handlers for eventual crashes in the application.
  */
-- (void)notifyCriticalApplicationData:(NSException *)exception {
-    
-    // Creates a crash object which contains the data log.
-    Crash *crash = [[Crash alloc] init];
-    crash.crashName = exception.name;
-    crash.crashReason = exception.reason;
-    
+- (void)notifyCriticalApplicationData:(NSException *)exception
+{
+    // Fills the crash object with important data to post to the server.
+    [NotifiCrash crash].crashName = exception.name;
+    [NotifiCrash crash].crashReason = exception.reason;
+
     // Fill the dictionary with data regarding the crash itself.
     NSMutableDictionary *crashParametersJSON = [[NSMutableDictionary alloc] init];
-    crashParametersJSON[@"exception_name"] = crash.crashName;
-    crashParametersJSON[@"exception_reason"] = crash.crashReason;
+    crashParametersJSON[@"exception_name"] = [[NotifiCrash crash] crashName];
+    crashParametersJSON[@"exception_reason"] = [[NotifiCrash crash] crashReason];
+    crashParametersJSON[@"stack_trace"] = [[[NotifiCrash crash] stackSymbols] componentsJoinedByString:@"\n"];
     
     // Fill the dictionary which corresponds the full JSON sent to the server.
     NSMutableDictionary *crashJSON = [[NSMutableDictionary alloc] init];
@@ -211,23 +220,6 @@ static void signalHandler(int signal) {
             NSLog(@"There was a download error");
         }
     }];
-}
-
-/*
- * Calls the functions which will deal with the application ending passing some useful information regarding the crash.
- */
-+ (void)handlerError:(NSMutableDictionary *)userInfo name:(NSString *)name reason:(NSString *)reason {
-    [[[NotifiCrash alloc] init] performSelectorOnMainThread:@selector(handleException:)
-                                               withObject:[NSException exceptionWithName:name reason:reason userInfo:userInfo]
-                                            waitUntilDone:YES];
-}
-
-/*
- * Checks if the signal/exception occurred is known by the system.
- */
-+ (BOOL)reachMaximum {
-    int32_t exceptionCount = OSAtomicIncrement32(&UncaughtExceptionCount);
-    return exceptionCount > UncaughtExceptionMaximum;
 }
 
 @end

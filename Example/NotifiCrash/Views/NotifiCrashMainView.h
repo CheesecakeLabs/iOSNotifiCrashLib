@@ -14,7 +14,7 @@
 @protocol NotifiCrashMainViewDelegate <NSObject>
 
 /**
- * Proposital crash.
+ * Purposeful crash.
  * @params sender Which button has been pressed
  */
 - (void)divideByZero:(UIButton *)sender;
