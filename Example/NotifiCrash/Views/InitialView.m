@@ -1,15 +1,15 @@
 //
-//  NotifiCrashMainView.m
+//  InitialView.m
 //  NotifiCrash
 //
 //  Created by Cheesecake Labs on 2/11/15.
 //  Copyright (c) 2015 Cheesecake Labs. All rights reserved.
 //
 
-#import "NotifiCrashMainView.h"
+#import "InitialView.h"
 #import <KeepLayout.h>
 
-@implementation NotifiCrashMainView
+@implementation InitialView
 
 - (id)init
 {

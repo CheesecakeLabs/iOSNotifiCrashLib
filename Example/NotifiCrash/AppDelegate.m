@@ -16,11 +16,9 @@
     // Defines application main window.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    
-    // Initiates CheeseBugMainViewController.
-    self.cheeseBugMainViewController = [[NotifiCrashMainViewController alloc] init];
-    
-    [self.window setRootViewController:self.cheeseBugMainViewController];
+
+    InitialViewController *initialViewController = [[InitialViewController alloc] init];
+    [self.window setRootViewController:initialViewController];
     [self.window makeKeyAndVisible];
 
     // Initializes the library which will handle the uncaught exceptions.
