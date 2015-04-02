@@ -1,11 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
 # source 'https://pedrohperalta@bitbucket.org/pedrohperalta/specs.git'
 
-target 'CheeseBug', :exclusive => true do
-  pod "CheeseBug", :path => "../"
+target 'NotifiCrash', :exclusive => true do
+  pod "NotifiCrash", :path => "../"
   pod "KeepLayout", :git => "https://github.com/iMartinKiss/KeepLayout.git", :tag => "v1.6.0"
 end
 
 target 'Tests', :exclusive => true do
-  pod "CheeseBug", :path => "../"
+  pod "NotifiCrash", :path => "../"
 end

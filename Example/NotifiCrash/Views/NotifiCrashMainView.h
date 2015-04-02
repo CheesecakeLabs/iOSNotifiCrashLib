@@ -1,6 +1,6 @@
 //
-//  CheeseBugMainView.h
-//  CheeseBug
+//  NotifiCrashMainView.h
+//  NotifiCrash
 //
 //  Created by Cheesecake Labs on 2/11/15.
 //  Copyright (c) 2015 Cheesecake Labs. All rights reserved.
@@ -11,19 +11,19 @@
 /**
  * Delegate to handle the button action
  */
-@protocol CheeseBugMainViewDelegate <NSObject>
+@protocol NotifiCrashMainViewDelegate <NSObject>
 
 /**
- * Proposital crash.
+ * Purposeful crash.
  * @params sender Which button has been pressed
  */
 - (void)divideByZero:(UIButton *)sender;
 
 @end
 
-@interface CheeseBugMainView : UIView
+@interface NotifiCrashMainView : UIView
 
 @property (strong, nonatomic) UIButton *crashButton;
-@property (assign) id <CheeseBugMainViewDelegate> delegate;
+@property (assign) id <NotifiCrashMainViewDelegate> delegate;
 
 @end

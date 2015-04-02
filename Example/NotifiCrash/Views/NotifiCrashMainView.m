@@ -1,18 +1,18 @@
 //
-//  CheeseBugMainView.m
-//  CheeseBug
+//  NotifiCrashMainView.m
+//  NotifiCrash
 //
 //  Created by Cheesecake Labs on 2/11/15.
 //  Copyright (c) 2015 Cheesecake Labs. All rights reserved.
 //
 
-#import "CheeseBugMainView.h"
-#import "CheeseBugMainViewController.h"
+#import "NotifiCrashMainView.h"
 #import <KeepLayout.h>
 
-@implementation CheeseBugMainView
+@implementation NotifiCrashMainView
 
-- (id)init {
+- (id)init
+{
     self = [super init];
     if (self) {
         [self loadView];
@@ -24,7 +24,8 @@
 /**
  * Builds all layout constraints using KeepLayout framework.
  **/
-- (void)setupConstraints {
+- (void)setupConstraints
+{
     self.crashButton.keepHeight.equal = 60;
     self.crashButton.keepWidth.equal = 150;
     [self.crashButton keepHorizontallyCentered];
@@ -34,8 +35,8 @@
 /**
  * Loads UI elements on the view.
  **/
-- (void)loadView {
-    
+- (void)loadView
+{
     // Initiates the crash button.
     self.crashButton = [[UIButton alloc] init];
     [self.crashButton addTarget:self.delegate action:@selector(divideByZero:) forControlEvents:UIControlEventTouchUpInside];

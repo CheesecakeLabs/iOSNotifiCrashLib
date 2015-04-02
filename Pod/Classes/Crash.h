@@ -17,5 +17,6 @@
 @property (strong, nonatomic) NSString *method;
 @property (strong, nonatomic) NSString *lineNumber;
 @property (strong, nonatomic) NSString *cause;
+@property (strong, nonatomic) NSArray  *stackSymbols;
 
 @end
