@@ -1,5 +1,5 @@
 //
-//  NotifiCrashMainView.h
+//  InitialView.h
 //  NotifiCrash
 //
 //  Created by Cheesecake Labs on 2/11/15.
@@ -11,19 +11,21 @@
 /**
  * Delegate to handle the button action
  */
-@protocol NotifiCrashMainViewDelegate <NSObject>
+@protocol InitialViewDelegate <NSObject>
 
 /**
  * Purposeful crash.
  * @params sender Which button has been pressed
  */
 - (void)divideByZero:(UIButton *)sender;
+- (void)accessOutOfBoundsIndex:(UIButton *)sender;
 
 @end
 
-@interface NotifiCrashMainView : UIView
+@interface InitialView : UIView
 
-@property (strong, nonatomic) UIButton *crashButton;
-@property (assign) id <NotifiCrashMainViewDelegate> delegate;
+@property (strong, nonatomic) UIButton *divideByZeroButton;
+@property (strong, nonatomic) UIButton *outOfBoundsButton;
+@property (assign) id <InitialViewDelegate> delegate;
 
 @end

@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NotifiCrashMainViewController.h"
+#import "InitialViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) NotifiCrashMainViewController *cheeseBugMainViewController;
 
 @end

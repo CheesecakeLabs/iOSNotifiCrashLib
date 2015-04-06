@@ -1,5 +1,5 @@
 //
-//  NotifiCrashMainViewController.h
+//  InitialViewController.h
 //  NotifiCrash
 //
 //  Created by Cheesecake Labs on 2/11/15.
@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NotifiCrashMainView.h"
+#import "InitialView.h"
 
-@interface NotifiCrashMainViewController : UIViewController <NotifiCrashMainViewDelegate>
+@interface InitialViewController : UIViewController <InitialViewDelegate>
 
 @end

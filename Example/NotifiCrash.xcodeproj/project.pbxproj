@@ -20,8 +20,8 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		95B32113436BE30D7F226806 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6C5D539A3611041093C1D14 /* libPods-Tests.a */; };
 		DA9794BB69552DAA96D625F7 /* libPods-NotifiCrash.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32166F2422E3CD802155D499 /* libPods-NotifiCrash.a */; };
-		EBE85FC51A8BB102005E072F /* NotifiCrashMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE85FC41A8BB102005E072F /* NotifiCrashMainView.m */; };
-		EBE85FC81A8BB18F005E072F /* NotifiCrashMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE85FC71A8BB18F005E072F /* NotifiCrashMainViewController.m */; };
+		EBE85FC51A8BB102005E072F /* InitialView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE85FC41A8BB102005E072F /* InitialView.m */; };
+		EBE85FC81A8BB18F005E072F /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE85FC71A8BB18F005E072F /* InitialViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,10 +59,10 @@
 		AF860CFDC8BB59D9EFD2A148 /* Pods-NotifiCrash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotifiCrash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotifiCrash/Pods-NotifiCrash.debug.xcconfig"; sourceTree = "<group>"; };
 		BA3EF4AE11207417C2A7EEFA /* NotifiCrash.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = NotifiCrash.podspec; path = ../NotifiCrash.podspec; sourceTree = "<group>"; };
 		EB80A97031F93DC51DB38C47 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		EBE85FC31A8BB102005E072F /* NotifiCrashMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifiCrashMainView.h; sourceTree = "<group>"; };
-		EBE85FC41A8BB102005E072F /* NotifiCrashMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifiCrashMainView.m; sourceTree = "<group>"; };
-		EBE85FC61A8BB18F005E072F /* NotifiCrashMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifiCrashMainViewController.h; sourceTree = "<group>"; };
-		EBE85FC71A8BB18F005E072F /* NotifiCrashMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifiCrashMainViewController.m; sourceTree = "<group>"; };
+		EBE85FC31A8BB102005E072F /* InitialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialView.h; sourceTree = "<group>"; };
+		EBE85FC41A8BB102005E072F /* InitialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialView.m; sourceTree = "<group>"; };
+		EBE85FC61A8BB18F005E072F /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		EBE85FC71A8BB18F005E072F /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
 		F6C5D539A3611041093C1D14 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -194,8 +194,8 @@
 		EBE85FBE1A8BB02B005E072F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EBE85FC31A8BB102005E072F /* NotifiCrashMainView.h */,
-				EBE85FC41A8BB102005E072F /* NotifiCrashMainView.m */,
+				EBE85FC31A8BB102005E072F /* InitialView.h */,
+				EBE85FC41A8BB102005E072F /* InitialView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,8 +203,8 @@
 		EBE85FBF1A8BB04B005E072F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EBE85FC61A8BB18F005E072F /* NotifiCrashMainViewController.h */,
-				EBE85FC71A8BB18F005E072F /* NotifiCrashMainViewController.m */,
+				EBE85FC61A8BB18F005E072F /* InitialViewController.h */,
+				EBE85FC71A8BB18F005E072F /* InitialViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -399,8 +399,8 @@
 			files = (
 				6003F59E195388D20070C39A /* AppDelegate.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				EBE85FC51A8BB102005E072F /* NotifiCrashMainView.m in Sources */,
-				EBE85FC81A8BB18F005E072F /* NotifiCrashMainViewController.m in Sources */,
+				EBE85FC51A8BB102005E072F /* InitialView.m in Sources */,
+				EBE85FC81A8BB18F005E072F /* InitialViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
