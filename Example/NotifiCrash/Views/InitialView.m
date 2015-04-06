@@ -22,29 +22,41 @@
 }
 
 /**
+* Loads UI elements on the view.
+**/
+- (void)loadView
+{
+    self.divideByZeroButton = [[UIButton alloc] init];
+    [self.divideByZeroButton addTarget:self.delegate action:@selector(divideByZero:) forControlEvents:UIControlEventTouchUpInside];
+    [self.divideByZeroButton setBackgroundColor:[UIColor grayColor]];
+    [self.divideByZeroButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.divideByZeroButton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+    [self.divideByZeroButton setTitle:@"Divide by zero" forState:UIControlStateNormal];
+    [self addSubview:self.divideByZeroButton];
+
+    self.outOfBoundsButton = [[UIButton alloc] init];
+    [self.outOfBoundsButton addTarget:self.delegate action:@selector(accessOutOfBoundsIndex:) forControlEvents:UIControlEventTouchUpInside];
+    [self.outOfBoundsButton setBackgroundColor:[UIColor grayColor]];
+    [self.outOfBoundsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.outOfBoundsButton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+    [self.outOfBoundsButton setTitle:@"Array out of bounds" forState:UIControlStateNormal];
+
+    [self addSubview:self.divideByZeroButton];
+    [self addSubview:self.outOfBoundsButton];
+}
+
+/**
  * Builds all layout constraints using KeepLayout framework.
  **/
 - (void)setupConstraints
 {
-    self.crashButton.keepHeight.equal = 60;
-    self.crashButton.keepWidth.equal = 150;
-    [self.crashButton keepHorizontallyCentered];
-    [self.crashButton keepVerticallyCentered];
-}
+    self.divideByZeroButton.keepTopInset.equal = 80;
+    self.divideByZeroButton.keepHorizontalInsets.equal = 30;
+    self.divideByZeroButton.keepHeight.equal = 50;
 
-/**
- * Loads UI elements on the view.
- **/
-- (void)loadView
-{
-    // Initiates the crash button.
-    self.crashButton = [[UIButton alloc] init];
-    [self.crashButton addTarget:self.delegate action:@selector(divideByZero:) forControlEvents:UIControlEventTouchUpInside];
-    [self.crashButton setBackgroundColor:[UIColor grayColor]];
-    [self.crashButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.crashButton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
-    [self.crashButton setTitle:@"Push for Crash" forState:UIControlStateNormal];
-    [self addSubview:self.crashButton];
+    self.outOfBoundsButton.keepTopOffsetTo(self.divideByZeroButton).equal = 30;
+    self.outOfBoundsButton.keepHorizontalInsets.equal = 30;
+    self.outOfBoundsButton.keepHeight.equal = 50;
 }
 
 @end

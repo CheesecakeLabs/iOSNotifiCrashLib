@@ -40,7 +40,13 @@
 
 - (void)divideByZero:(UIButton *)sender
 {
-    // Access out of bound index to create a crash on purpose.
+    int a = 1;
+    int b = 0;
+    NSLog(@"%d", a/b);
+}
+
+- (void)accessOutOfBoundsIndex:(UIButton *)sender
+{
     NSArray *array = @[@1, @2, @3];
     NSLog(@"%@",array[3]);
 }

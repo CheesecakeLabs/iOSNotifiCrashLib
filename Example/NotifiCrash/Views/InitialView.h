@@ -18,12 +18,14 @@
  * @params sender Which button has been pressed
  */
 - (void)divideByZero:(UIButton *)sender;
+- (void)accessOutOfBoundsIndex:(UIButton *)sender;
 
 @end
 
 @interface InitialView : UIView
 
-@property (strong, nonatomic) UIButton *crashButton;
+@property (strong, nonatomic) UIButton *divideByZeroButton;
+@property (strong, nonatomic) UIButton *outOfBoundsButton;
 @property (assign) id <InitialViewDelegate> delegate;
 
 @end
