@@ -194,6 +194,8 @@ static void signalHandler(int signal)
     [NotifiCrash crash].crashName = exception.name;
     [NotifiCrash crash].crashReason = exception.reason;
 
+    [self printCrashInfo];
+
     // Fill the dictionary with data regarding the crash itself.
     NSMutableDictionary *crashParametersJSON = [[NSMutableDictionary alloc] init];
     crashParametersJSON[@"exception_name"] = [[NotifiCrash crash] crashName];
@@ -220,6 +222,18 @@ static void signalHandler(int signal)
             NSLog(@"There was a download error");
         }
     }];
+}
+
+/*
+ * Prints the information about the crash for the developer.
+ */
+- (void)printCrashInfo
+{
+    NSLog(@"############################ CRASH REPORT ######################################");
+    NSLog(@"Crash name: %@", [NotifiCrash crash].crashName);
+    NSLog(@"Crash reason: %@", [NotifiCrash crash].crashReason);
+    NSLog(@"%@", [NotifiCrash crash].stackSymbols);
+    NSLog(@"################################################################################");
 }
 
 @end
