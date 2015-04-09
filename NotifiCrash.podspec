@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "NotifiCrash"
-  s.version          = "1.1.2"
+  s.version          = "1.1.3"
   s.summary          = "Library for crashes notification."
   s.description      = <<-DESC
                         Library that sends crashes information to a remote server.
@@ -16,6 +16,4 @@ Pod::Spec.new do |s|
   s.source_files = 'Pod/Classes/**/*'
 
   s.public_header_files = 'Pod/Classes/*.h'
-
-  # s.frameworks = 'UIKit', 'MapKit'
 end
