@@ -17,7 +17,12 @@
 
 // Represents a configuration that contains some useful information for the library to work.
 static Configuration *_config = nil;
+
+// Represents a crash that might happen in the app.
 static Crash *_crash = nil;
+
+// Third party exception that must coexist with NotifiCrash.
+static NSUncaughtExceptionHandler *thirdPartyExceptionHandler = nil;
 
 /*
  * Gets the library configuration object.
@@ -51,7 +56,17 @@ static Crash *_crash = nil;
 + (void)initWithSerialNumber:(NSString *)serialNumber
 {
     [NotifiCrash setupConfiguration:serialNumber];
+    [NotifiCrash saveThirdPartyHandler];
     [NotifiCrash installUncaughtExceptionHandler];
+}
+
+/*
+ * Checks if there is some other uncaught exception handler set previously
+ * and stores it in a variable, so that it can run after NotifiCrash's handler.
+ */
++ (void)saveThirdPartyHandler
+{
+    thirdPartyExceptionHandler = NSGetUncaughtExceptionHandler();
 }
 
 /*
@@ -124,9 +139,6 @@ static void signalHandler(int signal)
 
     [alert show];
 
-    // Forces the app to close in a maximum of 5 seconds.
-    [self performSelector:@selector(closeAlert) withObject:nil afterDelay:5];
-
     // Loop the thread enters and uses to run event handlers
     CFRunLoopRef runLoop = CFRunLoopGetCurrent();
     CFArrayRef allModes = CFRunLoopCopyAllModes(runLoop);
@@ -140,14 +152,19 @@ static void signalHandler(int signal)
 
     CFRelease(allModes);
 
-    // Releases the default handlers before killing the application.
-    NSSetUncaughtExceptionHandler(NULL);
+    // Releases the default handler and reset it to any other existing.
+    NSSetUncaughtExceptionHandler(thirdPartyExceptionHandler);
     signal(SIGABRT, SIG_DFL);
     signal(SIGILL, SIG_DFL);
     signal(SIGSEGV, SIG_DFL);
     signal(SIGFPE, SIG_DFL);
     signal(SIGBUS, SIG_DFL);
     signal(SIGPIPE, SIG_DFL);
+
+    // Calls the third party handler to handle the exception by its own way.
+    if (thirdPartyExceptionHandler != nil) {
+        thirdPartyExceptionHandler(exception);
+    }
 
     // Finishes the application, either killing the process in case of a signal or raising an exception.
     if ([[exception name] isEqual:UncaughtExceptionHandlerSignalExceptionName]) {
@@ -229,11 +246,11 @@ static void signalHandler(int signal)
  */
 - (void)printCrashInfo
 {
-    NSLog(@"############################ CRASH REPORT ######################################");
+    NSLog(@"######################################## CRASH REPORT ##################################################");
     NSLog(@"Crash name: %@", [NotifiCrash crash].crashName);
     NSLog(@"Crash reason: %@", [NotifiCrash crash].crashReason);
     NSLog(@"%@", [NotifiCrash crash].stackSymbols);
-    NSLog(@"################################################################################");
+    NSLog(@"########################################################################################################");
 }
 
 @end
