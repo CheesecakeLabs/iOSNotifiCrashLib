@@ -7,7 +7,6 @@
 //
 
 #import <NotifiBug/NotifiBug.h>
-#import <Raven/RavenClient.h>
 #import "AppDelegate.h"
 
 @implementation AppDelegate
@@ -15,11 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
-//    RavenClient *client = [RavenClient clientWithDSN:@"https://[public]:[secret]@[server]/[project id]"];
-//    RavenClient *client = [RavenClient clientWithDSN:@""];
-//    [client setupExceptionHandler];
-
-    [NotifiBug initWithSerialNumber:@"1255f5292a006c4c3bc50ffe428339"];
+    [NotifiBug initWithSerialNumber:@"YOUR_SERIAL_HERE"];
 
     return YES;
 }
