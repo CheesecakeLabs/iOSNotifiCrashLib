@@ -1,16 +1,16 @@
 {
   "name": "NotifiBug",
-  "version": "0.1.0",
-  "summary": "A short description of NotifiBug.",
-  "description": "                       An optional longer description of NotifiBug\n\n                       * Markdown format.\n                       * Don't worry about the indent, we strip it!\n",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/NotifiBug",
+  "version": "2.0.0",
+  "summary": "Library for crashes notification.",
+  "description": "                        Library that sends crashes information to a remote server.\n",
+  "homepage": "http://www.ckl.io",
   "license": "MIT",
   "authors": {
-    "Marko Arsic": "marsicdev@gmail.com"
+    "Pedro Henrique Prates Peralta": "pedro@ckl.io"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/NotifiBug.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/CheesecakeLabs/iOSNotifiBug",
+    "tag": "2.0.0"
   },
   "platforms": {
     "ios": "7.0"
@@ -21,5 +21,6 @@
     "NotifiBug": [
       "Pod/Assets/*.png"
     ]
-  }
+  },
+  "public_header_files": "Pod/Classes/*.h"
 }

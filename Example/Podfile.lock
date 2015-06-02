@@ -1,5 +1,5 @@
 PODS:
-  - NotifiBug (0.1.0)
+  - NotifiBug (2.0.0)
 
 DEPENDENCIES:
   - NotifiBug (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  NotifiBug: 03dbd74f7990f8b693064a944718f8b24c3bf753
+  NotifiBug: 588f3d27465e7a2612481ca7bfbacd67e1a38a04
 
 COCOAPODS: 0.37.2
