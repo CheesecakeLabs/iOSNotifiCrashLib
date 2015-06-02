@@ -1,0 +1,14 @@
+PODS:
+  - NotifiBug (0.1.0)
+
+DEPENDENCIES:
+  - NotifiBug (from `../`)
+
+EXTERNAL SOURCES:
+  NotifiBug:
+    :path: ../
+
+SPEC CHECKSUMS:
+  NotifiBug: 03dbd74f7990f8b693064a944718f8b24c3bf753
+
+COCOAPODS: 0.37.2

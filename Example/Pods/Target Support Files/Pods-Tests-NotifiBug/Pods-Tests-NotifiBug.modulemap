@@ -1,0 +1,6 @@
+framework module NotifiBug {
+  umbrella header "Pods-Tests-NotifiBug-umbrella.h"
+
+  export *
+  module * { export * }
+}
