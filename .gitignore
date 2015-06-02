@@ -2,7 +2,7 @@
 .DS_Store
 
 # AppCode
-Example/.idea
+Example/.idea/
 
 # Xcode
 build/

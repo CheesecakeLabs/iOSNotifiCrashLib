@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Pods-Tests-NotifiBug-NotifiBug" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="Pods-Tests-NotifiBug-NotifiBug" CONFIG_NAME="Debug" SCHEME_NAME="Pods-Tests-NotifiBug-NotifiBug" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+  <configuration default="false" name="Pods-Tests-NotifiBug-NotifiBug" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="Pods-Tests-NotifiBug-NotifiBug" CONFIG_NAME="Debug" SCHEME_NAME="Pods-Tests-NotifiBug-NotifiBug" RUN_TARGET_PROJECT_NAME="NotifiBug" RUN_TARGET_NAME="NotifiBug_Example" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
     <envs />
     <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
       <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
