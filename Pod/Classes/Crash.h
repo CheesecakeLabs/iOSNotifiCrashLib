@@ -11,12 +11,15 @@
 
 @interface Crash : NSObject
 
-@property (strong, nonatomic) NSString *crashName;
-@property (strong, nonatomic) NSString *crashReason;
-@property (strong, nonatomic) NSString *className;
-@property (strong, nonatomic) NSString *method;
-@property (strong, nonatomic) NSString *lineNumber;
-@property (strong, nonatomic) NSString *cause;
-@property (strong, nonatomic) NSArray  *stackSymbols;
+@property(strong, nonatomic) NSString *name;
+@property(strong, nonatomic) NSString *reason;
+@property(strong, nonatomic) NSString *time;
+@property(strong, nonatomic) NSString *appVersion;
+@property(strong, nonatomic) NSString *osVersion;
+@property(strong, nonatomic) NSString *deviceModel;
+@property(strong, nonatomic) NSString *className;
+@property(strong, nonatomic) NSString *method;
+@property(strong, nonatomic) NSString *lineNumber;
+@property(strong, nonatomic) NSString *stackTrace;
 
 @end

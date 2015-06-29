@@ -8,8 +8,27 @@
 
 #import "NotifiCrash.h"
 #import "Crash.h"
-#import "NTFConstants.h"
+#import "Constants.h"
 #include <libkern/OSAtomic.h>
+#import <sys/utsname.h>
+
+static NSString *const TIMESTAMP_FORMAT = @"yyyy-MM-dd'T'HH:mm:ssZ";
+
+static NSString *const APP_SERIAL_NUMBER = @"application";
+
+static NSString *const CRASH_NAME = @"name";
+static NSString *const CRASH_TIMESTAMP = @"time";
+static NSString *const CRASH_REASON = @"reason";
+static NSString *const CRASH_APP_VERSION = @"app_version";
+static NSString *const CRASH_OS_VERSION = @"os_version";
+static NSString *const CRASH_DEVICE_MODEL = @"device_model";
+static NSString *const CRASH_CLASS = @"class_name";
+static NSString *const CRASH_LINE = @"line_number";
+static NSString *const CRASH_METHOD = @"method_name";
+static NSString *const CRASH_STACKTRACE = @"stack_trace";
+
+NSString *deviceModel();
+
 
 @implementation NotifiCrash
 
@@ -21,7 +40,7 @@ static Configuration *_config = nil;
 // Represents a crash that might happen in the app.
 static Crash *_crash = nil;
 
-// Third party exception that must coexist with NotifiCrash.
+// Third party exception that must coexist with NotifiBug.
 static NSUncaughtExceptionHandler *thirdPartyExceptionHandler = nil;
 
 /*
@@ -29,7 +48,7 @@ static NSUncaughtExceptionHandler *thirdPartyExceptionHandler = nil;
  */
 + (Configuration *)configuration
 {
-    if (_config == nil) {
+    if (!_config) {
         _config = [[Configuration alloc] init];
     }
 
@@ -41,7 +60,7 @@ static NSUncaughtExceptionHandler *thirdPartyExceptionHandler = nil;
  */
 + (Crash *)crash
 {
-    if (_crash == nil) {
+    if (!_crash) {
         _crash = [[Crash alloc] init];
     }
 
@@ -49,8 +68,8 @@ static NSUncaughtExceptionHandler *thirdPartyExceptionHandler = nil;
 }
 
 /*
- * Initializes the library for the given application serial. 
- * This function implements the Facade Patter by being the 
+ * Initializes the library for the given application serial.
+ * This function implements the Facade Patter by being the
  * interface between the library and the app which uses it.
  */
 + (void)initWithSerialNumber:(NSString *)serialNumber
@@ -74,7 +93,7 @@ static NSUncaughtExceptionHandler *thirdPartyExceptionHandler = nil;
  */
 + (void)setupConfiguration:(NSString *)serialNumber
 {
-    [[NotifiCrash configuration] setHost:Host];
+    [[NotifiCrash configuration] setHost:[self decodeUrl:NBEncodedUrl]];
     [[NotifiCrash configuration] setSerialNumber:serialNumber];
 }
 
@@ -83,10 +102,12 @@ static NSUncaughtExceptionHandler *thirdPartyExceptionHandler = nil;
  */
 static void exceptionHandler(NSException *exception)
 {
-    if ([NotifiCrash reachMaximum])
+    if ([NotifiCrash reachMaximum]) {
         return;
+    }
 
-    [NotifiCrash crash].stackSymbols = [exception callStackSymbols];
+    NSArray *stack = [exception callStackSymbols];
+    [[NotifiCrash crash] setStackTrace:[stack componentsJoinedByString:@"\n"]];
 
     [NotifiCrash handlerError:nil name:[exception name] reason:[exception reason]];
 }
@@ -96,11 +117,11 @@ static void exceptionHandler(NSException *exception)
  */
 static void signalHandler(int signal)
 {
-    if ([NotifiCrash reachMaximum])
+    if ([NotifiCrash reachMaximum]) {
         return;
+    }
 
     NSString *reason = [NSString stringWithFormat:@"Signal %d was raised.", signal];
-
     [NotifiCrash handlerError:nil name:UncaughtExceptionHandlerSignalExceptionName reason:reason];
 }
 
@@ -119,7 +140,9 @@ static void signalHandler(int signal)
 + (void)handlerError:(NSMutableDictionary *)userInfo name:(NSString *)name reason:(NSString *)reason
 {
     [[[NotifiCrash alloc] init] performSelectorOnMainThread:@selector(handleException:)
-                                                 withObject:[NSException exceptionWithName:name reason:reason userInfo:userInfo]
+                                                 withObject:[NSException exceptionWithName:name
+                                                                                    reason:reason
+                                                                                  userInfo:userInfo]
                                               waitUntilDone:YES];
 }
 
@@ -128,7 +151,8 @@ static void signalHandler(int signal)
  */
 - (void)handleException:(NSException *)exception
 {
-    [self notifyCriticalApplicationData:exception];
+    [self captureCrashDataFromException:exception];
+    [self attemptSendingCrash];
 
     // Raises an alert informing the user about the crash.
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:AlertTitle
@@ -136,7 +160,6 @@ static void signalHandler(int signal)
                                                    delegate:self
                                           cancelButtonTitle:AlertButton
                                           otherButtonTitles:nil];
-
     [alert show];
 
     // Loop the thread enters and uses to run event handlers
@@ -205,52 +228,98 @@ static void signalHandler(int signal)
 /*
  * Performs the installation of the handlers for eventual crashes in the application.
  */
-- (void)notifyCriticalApplicationData:(NSException *)exception
+- (void)attemptSendingCrash
 {
-    // Fills the crash object with important data to post to the server.
-    [NotifiCrash crash].crashName = exception.name;
-    [NotifiCrash crash].crashReason = exception.reason;
 
-    [self printCrashInfo];
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:[self requestData:[NotifiCrash crash]] options:0 error:nil];
 
-    // Fill the dictionary with data regarding the crash itself.
-    NSMutableDictionary *crashParametersJSON = [[NSMutableDictionary alloc] init];
-    crashParametersJSON[@"exception_name"] = [[NotifiCrash crash] crashName];
-    crashParametersJSON[@"exception_reason"] = [[NotifiCrash crash] crashReason];
-    crashParametersJSON[@"stack_trace"] = [[[NotifiCrash crash] stackSymbols] componentsJoinedByString:@"\n"];
-    
-    // Fill the dictionary which corresponds the full JSON sent to the server.
-    NSMutableDictionary *crashJSON = [[NSMutableDictionary alloc] init];
-    crashJSON[@"serial_number"] = [[NotifiCrash configuration] serialNumber];
-    crashJSON[@"crash"] = crashParametersJSON;
-    
-    NSData *postData = [NSJSONSerialization dataWithJSONObject:crashJSON options:0 error:nil];
-    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[[NotifiCrash configuration] host]]];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:postData];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-    
-    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        if ([data length] == 0 && error == nil) {
-            NSLog(@"Crash successfully posted");
-        } else if (error != nil) {
-            NSLog(@"There was a download error");
-        }
-    }];
+
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:queue
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+
+                               if (![data length] && !error) {
+                                   NSLog(@"Crash successfully posted");
+                               } else if (error) {
+                                   NSLog(@"There was a upload error");
+                               }
+                           }];
 }
 
-/*
- * Prints the information about the crash for the developer.
- */
-- (void)printCrashInfo
+- (void)captureCrashDataFromException:(NSException *)exception
 {
-    NSLog(@"######################################## CRASH REPORT ##################################################");
-    NSLog(@"Crash name: %@", [NotifiCrash crash].crashName);
-    NSLog(@"Crash reason: %@", [NotifiCrash crash].crashReason);
-    NSLog(@"%@", [NotifiCrash crash].stackSymbols);
-    NSLog(@"########################################################################################################");
+    // Fills the crash object with important data to post to the server.
+    [[NotifiCrash crash] setName:exception.name];
+    [[NotifiCrash crash] setReason:exception.reason];
+    [[NotifiCrash crash] setTime:[self timeStamp]];
+    [[NotifiCrash crash] setAppVersion:[self appVersionData]];
+    [[NotifiCrash crash] setDeviceModel:deviceModel()];
+    [[NotifiCrash crash] setOsVersion:[self osVersionData]];
+}
+
+- (NSMutableDictionary *)requestData:(Crash *)crash
+{
+    // Fill the dictionary with data regarding the crash itself.
+    NSMutableDictionary *postJSONData = [[NSMutableDictionary alloc] init];
+
+    postJSONData[APP_SERIAL_NUMBER] = [[NotifiCrash configuration] serialNumber];
+    postJSONData[CRASH_NAME] = [crash name];
+    postJSONData[CRASH_REASON] = [crash reason];
+    postJSONData[CRASH_TIMESTAMP] = [crash time];
+    postJSONData[CRASH_APP_VERSION] = [crash appVersion];
+    postJSONData[CRASH_OS_VERSION] = [crash osVersion];
+    postJSONData[CRASH_DEVICE_MODEL] = [crash deviceModel];
+    postJSONData[CRASH_STACKTRACE] = [crash stackTrace];
+
+    return postJSONData;
+}
+
+#pragma mark - Internal helpers
+
+- (NSString *)timeStamp
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSTimeInterval interval = [[NSDate date] timeIntervalSince1970];
+    NSDate *timestamp = [NSDate dateWithTimeIntervalSince1970:interval];
+    [dateFormatter setDateFormat:TIMESTAMP_FORMAT];
+
+    return [dateFormatter stringFromDate:timestamp];
+}
+
+NSString *deviceModel()
+{
+    struct utsname systemInfo;
+    uname(&systemInfo);
+
+    return [NSString stringWithCString:systemInfo.machine
+                              encoding:NSUTF8StringEncoding];
+}
+
+- (NSString *)appVersionData
+{
+    NSString *appVersionString = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    NSString *appBuildString = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
+
+    return [NSString stringWithFormat:@"%@ (%@)", appVersionString, appBuildString];
+}
+
+- (NSString *)osVersionData
+{
+    NSString *osVersion = [[UIDevice currentDevice] systemVersion];
+    return [NSString stringWithFormat:@"%@", osVersion];
+}
+
++ (NSString *)decodeUrl:(NSString *)encodedUrl
+{
+    NSData *decodedData = [[NSData alloc] initWithBase64EncodedString:encodedUrl options:0];
+    NSString *apiEndpointUrl = [[NSString alloc] initWithData:decodedData encoding:NSUTF8StringEncoding];
+
+    return apiEndpointUrl;
 }
 
 @end

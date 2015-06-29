@@ -22,7 +22,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     self.initialView = [[InitialView alloc] init];
     [self.initialView setUserInteractionEnabled:YES];
     [self.initialView setDelegate:self];
@@ -42,13 +42,13 @@
 {
     int a = 1;
     int b = 0;
-    NSLog(@"%d", a/b);
+    NSLog(@"%d", a / b);
 }
 
 - (void)accessOutOfBoundsIndex:(UIButton *)sender
 {
     NSArray *array = @[@1, @2, @3];
-    NSLog(@"%@",array[3]);
+    NSLog(@"%@", array[3]);
 }
 
 @end

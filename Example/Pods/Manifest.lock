@@ -1,6 +1,6 @@
 PODS:
   - KeepLayout (1.6.0)
-  - NotifiCrash (1.1.2)
+  - NotifiCrash (1.2)
 
 DEPENDENCIES:
   - KeepLayout (from `https://github.com/iMartinKiss/KeepLayout.git`, tag `v1.6.0`)
@@ -19,7 +19,7 @@ CHECKOUT OPTIONS:
     :tag: v1.6.0
 
 SPEC CHECKSUMS:
-  KeepLayout: f6364def4921aca9853b91d998b5737a7210fd6a
-  NotifiCrash: f44a2af2f5c8933573cc58d0a91011b23359e3ec
+  KeepLayout: d85a52300a23ba1504ba330c5200bb01ba3baeb0
+  NotifiCrash: f8824c7bec44ff364b33af94bb8c59f198a23e2e
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.37.2

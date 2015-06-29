@@ -1,5 +1,4 @@
 source 'https://github.com/CocoaPods/Specs.git'
-# source 'https://pedrohperalta@bitbucket.org/pedrohperalta/specs.git'
 
 target 'NotifiCrash', :exclusive => true do
   pod "NotifiCrash", :path => "../"

@@ -22,7 +22,7 @@
     [self.window makeKeyAndVisible];
 
     // Initializes the library which will handle the uncaught exceptions.
-    [NotifiCrash initWithSerialNumber:@"f90a6eeb9f202fcd6e7321ebba7ef6"];
+    [NotifiCrash initWithSerialNumber:@"1255f5292a006c4c3bc50ffe428339"];
 
     return YES;
 }

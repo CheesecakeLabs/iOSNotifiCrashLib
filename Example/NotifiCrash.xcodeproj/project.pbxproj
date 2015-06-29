@@ -138,9 +138,6 @@
 		6003F593195388D20070C39A /* NotifiCrash */ = {
 			isa = PBXGroup;
 			children = (
-				EBE85FC21A8BB085005E072F /* Models */,
-				EBE85FC11A8BB073005E072F /* Helpers */,
-				EBE85FC01A8BB063005E072F /* Stores */,
 				EBE85FBF1A8BB04B005E072F /* Controllers */,
 				EBE85FBE1A8BB02B005E072F /* Views */,
 				6003F59C195388D20070C39A /* AppDelegate.h */,
@@ -209,27 +206,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		EBE85FC01A8BB063005E072F /* Stores */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Stores;
-			sourceTree = "<group>";
-		};
-		EBE85FC11A8BB073005E072F /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		EBE85FC21A8BB085005E072F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -283,7 +259,7 @@
 				ORGANIZATIONNAME = "Pedro Henrique Prates Peralta";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = BX9C2PMXPH;
+						DevelopmentTeam = 2ZD2TUPJ8B;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -458,6 +434,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -497,7 +474,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

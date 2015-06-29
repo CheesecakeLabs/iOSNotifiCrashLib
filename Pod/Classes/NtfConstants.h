@@ -17,8 +17,6 @@ static NSString* const UncaughtExceptionHandlerSignalKey = @"UncaughtExceptionHa
 static volatile int32_t UncaughtExceptionCount = 0;
 static const int32_t UncaughtExceptionMaximum = 10;
 
-static NSString* const Host = @"http://notificrash.ckl.io/core/crashes/";
-
 static NSString* const AlertTitle = @"Unhandled exception";
 static NSString* const AlertMessage = @"An error occurred and requires your app to be closed";
 static NSString* const AlertButton = @"Quit";

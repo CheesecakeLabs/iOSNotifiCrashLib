@@ -24,8 +24,8 @@
 
 @interface InitialView : UIView
 
-@property (strong, nonatomic) UIButton *divideByZeroButton;
-@property (strong, nonatomic) UIButton *outOfBoundsButton;
-@property (assign) id <InitialViewDelegate> delegate;
+@property(strong, nonatomic) UIButton *divideByZeroButton;
+@property(strong, nonatomic) UIButton *outOfBoundsButton;
+@property(assign) id <InitialViewDelegate> delegate;
 
 @end

@@ -7,447 +7,422 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0BBD991BEF638B59BF59CC69 /* KeepLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E4A4A937E4B790EFB22AB75 /* KeepLayoutConstraint.h */; };
-		132A0326E47CFAE5F2C8A242 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = C65D4C6403F6FD6E38ACA09F /* Configuration.m */; };
-		18101B9780FB50D03FFA7546 /* Crash.h in Headers */ = {isa = PBXBuildFile; fileRef = 39390405FA3B05322E414763 /* Crash.h */; };
-		19AEF6E14FC5ED980E4EEBEB /* Crash.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E38062E8C28E6AD772A69 /* Crash.m */; };
-		1DEAFA0EC272C1BAC1A8B1B3 /* NotifiCrash.h in Headers */ = {isa = PBXBuildFile; fileRef = 10D51BE2C2AD7D933A9635E0 /* NotifiCrash.h */; };
-		1E2DAEC22E3371E551C568F9 /* KeepTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 877523FBA8B04D34D702974F /* KeepTypes.h */; };
-		1EBA46909201897844C4CD73 /* KeepArray.m in Sources */ = {isa = PBXBuildFile; fileRef = A349BC6444951A1ABEB42E5C /* KeepArray.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		20CC0AE26691B4C3764347D6 /* KeepLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = C887327B2B58B2B0A94C2D6A /* KeepLayout.h */; };
-		21F1FD981082D0ACCB21AE37 /* NotifiCrash.h in Headers */ = {isa = PBXBuildFile; fileRef = 10D51BE2C2AD7D933A9635E0 /* NotifiCrash.h */; };
-		2C34E3BA305AD834F93D1BDE /* Pods-NotifiCrash-KeepLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 895B0ECF9153BCAB2B88CEA1 /* Pods-NotifiCrash-KeepLayout-dummy.m */; };
-		3110CB1FC37F650CA34D3118 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAEB9589C1B5CF836DC231DD /* Foundation.framework */; };
-		38577350C742248DBD6A127B /* Configuration.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CAA7939EB74E36A29973057 /* Configuration.h */; };
-		3E35A79B0DE8939EAD7B2BD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAEB9589C1B5CF836DC231DD /* Foundation.framework */; };
-		41B3F9DC5D09194173EF2442 /* NtfConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 43EE1CAB21FC72B2492FF9F7 /* NtfConstants.h */; };
-		49D80A4E32A8FD49E58BC430 /* KeepView.h in Headers */ = {isa = PBXBuildFile; fileRef = B0F771832A6EC0147103A523 /* KeepView.h */; };
-		4DA54B4FA898CB9144C50461 /* NotifiCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 91142CB5257F1837EB8276B3 /* NotifiCrash.m */; };
-		506EE604EC9053D0B4976313 /* KeepAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBFD2F35F16C321AACD936 /* KeepAttribute.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		51DC65D3DF334A3D070B51BF /* KeepTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 759A7F85908ADFFB0640D35B /* KeepTypes.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		60A9BEE743D40F9822A1729F /* UIViewController+KeepLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F31E908CDACF0268706C9C /* UIViewController+KeepLayout.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		72D30F7960AC2E80F396307C /* Pods-NotifiCrash-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D942C40BD7F8FE7A016455AF /* Pods-NotifiCrash-dummy.m */; };
-		80897D97FA5E57B2036B5DD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAEB9589C1B5CF836DC231DD /* Foundation.framework */; };
-		80AA46D97D590E304AC06CCC /* UIViewController+KeepLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9180A69D3D9C5417E6945F14 /* UIViewController+KeepLayout.h */; };
-		B14706E94CF9AE16481EBD5E /* NtfConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 43EE1CAB21FC72B2492FF9F7 /* NtfConstants.h */; };
-		B354AFE4C4BDE87B18FF0E4A /* KeepView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C6222F79DA08742E5F5DC /* KeepView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		B841439FCFF8B9B5DD44170E /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = C65D4C6403F6FD6E38ACA09F /* Configuration.m */; };
-		BBDD93F3B3363566A6D8BC2B /* Configuration.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CAA7939EB74E36A29973057 /* Configuration.h */; };
-		C079371D3D9B6640680643AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAEB9589C1B5CF836DC231DD /* Foundation.framework */; };
-		D280FEE426E4D67E896CBD15 /* Pods-NotifiCrash-NotifiCrash-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 169FEB3B1B4B396D16DD6551 /* Pods-NotifiCrash-NotifiCrash-dummy.m */; };
-		D6A380FB5D1A8EC8C4F40FC4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAEB9589C1B5CF836DC231DD /* Foundation.framework */; };
-		D7E99342AE821E99CFB56496 /* NotifiCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 91142CB5257F1837EB8276B3 /* NotifiCrash.m */; };
-		DF0DB410BA75FAC9EB4468D9 /* KeepArray.h in Headers */ = {isa = PBXBuildFile; fileRef = C3A86E65BDA69A528A040B34 /* KeepArray.h */; };
-		E2577540D912B32BE61D885C /* Crash.h in Headers */ = {isa = PBXBuildFile; fileRef = 39390405FA3B05322E414763 /* Crash.h */; };
-		F2CEF6DD880FCB60BE90E59E /* KeepLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F54A6F9C18315AD704DE2BB2 /* KeepLayoutConstraint.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		F4237F7FDE50D9C1D64AF898 /* Pods-Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 217C34DF96F6D91774919A75 /* Pods-Tests-dummy.m */; };
-		F866AEB1DEFDC0F0BEBA022E /* Crash.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E38062E8C28E6AD772A69 /* Crash.m */; };
-		F8B4D537A6C8BD4CB7619531 /* KeepAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7D372B6984645A92A14876 /* KeepAttribute.h */; };
-		FBA4C7B1D9BFBDD05FD8B6A1 /* Pods-Tests-NotifiCrash-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E811CDE0CDF0FDF140DF26 /* Pods-Tests-NotifiCrash-dummy.m */; };
+		038BAF151840AD640CF2450B /* NotifiCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = F41561C9C98D24E80B66D9DB /* NotifiCrash.m */; };
+		0C0639B26A525E35BFF44B1E /* Pods-NotifiCrash-KeepLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6F3832BBA2EE63F2DB2FEF /* Pods-NotifiCrash-KeepLayout-dummy.m */; };
+		0C1AA2909BDCA57593F057DE /* KeepArray.h in Headers */ = {isa = PBXBuildFile; fileRef = EBC2F75387E25E8F3F66F0D1 /* KeepArray.h */; };
+		0F461FA9FD2B57032B87F799 /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = 05EF126BA7F0B2F682C9FF91 /* Constants.h */; };
+		167C65E48CB14BCB48D77F4D /* Pods-Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCB6A2C4922E2EFBC7EF9FA /* Pods-Tests-dummy.m */; };
+		1BA4A05AAE06960E8E8324CB /* NotifiCrash.h in Headers */ = {isa = PBXBuildFile; fileRef = A09D38E47EBAB96D5726C055 /* NotifiCrash.h */; };
+		2615161EFB027646EDC4D750 /* KeepAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 61A46E266FF84C22C17EC540 /* KeepAttribute.h */; };
+		2951BDB124179A22FDD1E6AF /* KeepView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9403FFA281973B4DCD0FF3D /* KeepView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2D0EE6E564AD685EF60A5D38 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = DB686DD38558C4086B213584 /* Configuration.m */; };
+		3BECE098A0E36564AA02FDE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727E8CB16C0D1C7C035ED860 /* Foundation.framework */; };
+		41641BA7A5344511D40EDFC7 /* KeepTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = F2694716F7F80CA7000AF0D7 /* KeepTypes.h */; };
+		4B7098BEAAAF0409EF7DFDB9 /* Crash.m in Sources */ = {isa = PBXBuildFile; fileRef = 94476811FD24A2521F3B9781 /* Crash.m */; };
+		4D78264EA346419D5B9D1D7D /* Crash.h in Headers */ = {isa = PBXBuildFile; fileRef = E52F1BF8D73D7BB8D189DFF3 /* Crash.h */; };
+		5109B09FCAA6E53148264F61 /* NtfConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CE90E6E1CC4A0D62C91CB63 /* NtfConstants.h */; };
+		528B38C9E372EDC2F4C5F281 /* KeepView.h in Headers */ = {isa = PBXBuildFile; fileRef = B4CBCD9B2F8391CC286D6B90 /* KeepView.h */; };
+		57201401E74A138EE5051F7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727E8CB16C0D1C7C035ED860 /* Foundation.framework */; };
+		6C765A6890F9D5B398F2F909 /* Pods-NotifiCrash-NotifiCrash-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A13C5E9AF837201BBA33486F /* Pods-NotifiCrash-NotifiCrash-dummy.m */; };
+		72BA659B1DE59925B5474D0D /* NotifiCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = F41561C9C98D24E80B66D9DB /* NotifiCrash.m */; };
+		745054597F1D7DB0F52DE285 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727E8CB16C0D1C7C035ED860 /* Foundation.framework */; };
+		785D7A73291E352EDD518E82 /* NtfConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CE90E6E1CC4A0D62C91CB63 /* NtfConstants.h */; };
+		7AE1A3FDFAB780D5BF9450D1 /* Pods-NotifiCrash-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACFE780A8A01051467313F9 /* Pods-NotifiCrash-dummy.m */; };
+		7AE7DEF184B9D077E4397DA5 /* KeepLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B28A3C00677C5ABDE63161A5 /* KeepLayoutConstraint.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		8E5E5881839437EF5C6378D0 /* Pods-Tests-NotifiCrash-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EB93529D90D66FC0A0041662 /* Pods-Tests-NotifiCrash-dummy.m */; };
+		978A63CEC346950ACC22DBB5 /* Crash.m in Sources */ = {isa = PBXBuildFile; fileRef = 94476811FD24A2521F3B9781 /* Crash.m */; };
+		9A2A7B0DAB6BDF2D0C226A18 /* KeepLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DECB22F4B89AE154795AC6A /* KeepLayoutConstraint.h */; };
+		B0D25C8551A70B3BEFBF18A0 /* Configuration.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C3ADB82951E2756BD4B92EA /* Configuration.h */; };
+		B0F60F69A63B460CDB01A6BF /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = F862847147363E5947D6FE71 /* Constants.m */; };
+		B2B839ADC4267A5FC6B78A63 /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = 05EF126BA7F0B2F682C9FF91 /* Constants.h */; };
+		B4C643FE73C87D456240F5B8 /* KeepLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BD5082B20C92D801950B9A /* KeepLayout.h */; };
+		C4A69383190DAFFC3D9FBA2D /* UIViewController+KeepLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DB7E662280F59224350E613 /* UIViewController+KeepLayout.h */; };
+		CDCAD7F9DC2A01B9DE3253F8 /* KeepAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 054E3F5B8EF6AA7292889D93 /* KeepAttribute.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D42C33FAB92494CB4B9DD972 /* KeepTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E19580C073C6ABFEB5FBDD7 /* KeepTypes.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D56B37492FC569346613FD20 /* NotifiCrash.h in Headers */ = {isa = PBXBuildFile; fileRef = A09D38E47EBAB96D5726C055 /* NotifiCrash.h */; };
+		DC0530008EE2C65C845542FD /* Crash.h in Headers */ = {isa = PBXBuildFile; fileRef = E52F1BF8D73D7BB8D189DFF3 /* Crash.h */; };
+		DE8094E6819098588BDAE6C7 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = F862847147363E5947D6FE71 /* Constants.m */; };
+		E20446A3624F3E19293EF869 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727E8CB16C0D1C7C035ED860 /* Foundation.framework */; };
+		E7D2327237D4F3C6E572D13E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727E8CB16C0D1C7C035ED860 /* Foundation.framework */; };
+		EFC051DB11FDA94577904B15 /* KeepArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DF68E9DE4A697FB78D2EE406 /* KeepArray.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F1C95AA75F1BB43DAAF82ACE /* Configuration.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C3ADB82951E2756BD4B92EA /* Configuration.h */; };
+		F769CBD36E44D0DB5EDE547E /* UIViewController+KeepLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE186B1C2499FB7FC66291A /* UIViewController+KeepLayout.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		FE3337763D22DD24B80AFE24 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = DB686DD38558C4086B213584 /* Configuration.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		32C712BBBBF6D57AA71F2E15 /* PBXContainerItemProxy */ = {
+		219676EFA9CB1AF1FA9A8AD1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E917DBDA3793598D72E67C68 /* Project object */;
+			containerPortal = 3E416A292C132E69A4F658DF /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FBE9A26B3671107F58851DC8;
+			remoteGlobalIDString = 2731FADE4F333F63FFA5FBE7;
 			remoteInfo = "Pods-NotifiCrash-KeepLayout";
 		};
-		A678F4261DB57267B5612479 /* PBXContainerItemProxy */ = {
+		606B7063B5474A6EC76D8EDB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E917DBDA3793598D72E67C68 /* Project object */;
+			containerPortal = 3E416A292C132E69A4F658DF /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 36128FAC6C79A0B6A1A6C8A7;
+			remoteGlobalIDString = 5696A2CF9E0C15614A865BB7;
 			remoteInfo = "Pods-Tests-NotifiCrash";
 		};
-		CA10F7C622A1A89A85164134 /* PBXContainerItemProxy */ = {
+		C0D60D13B45F83FCED5EF1BB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E917DBDA3793598D72E67C68 /* Project object */;
+			containerPortal = 3E416A292C132E69A4F658DF /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 59E466E155A06A04EDDC40F3;
+			remoteGlobalIDString = E362E6C28CA266080A1E0FA7;
 			remoteInfo = "Pods-NotifiCrash-NotifiCrash";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		025EB24EA945B0E988D2187D /* Pods-Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0724C6C02CDDE1D5B4857A71 /* Pods-NotifiCrash-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NotifiCrash-environment.h"; sourceTree = "<group>"; };
-		0AEBFD2F35F16C321AACD936 /* KeepAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KeepAttribute.m; path = Sources/KeepAttribute.m; sourceTree = "<group>"; };
-		0B110DE77140980D0DC5A602 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		10D51BE2C2AD7D933A9635E0 /* NotifiCrash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NotifiCrash.h; path = Pod/Classes/NotifiCrash.h; sourceTree = "<group>"; };
-		12C386EC75035DDC144728F8 /* Pods-Tests-NotifiCrash.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-NotifiCrash.xcconfig"; path = "../Pods-Tests-NotifiCrash/Pods-Tests-NotifiCrash.xcconfig"; sourceTree = "<group>"; };
-		169FEB3B1B4B396D16DD6551 /* Pods-NotifiCrash-NotifiCrash-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NotifiCrash-NotifiCrash-dummy.m"; sourceTree = "<group>"; };
-		1CAA7939EB74E36A29973057 /* Configuration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Configuration.h; path = Pod/Classes/Configuration.h; sourceTree = "<group>"; };
-		217C34DF96F6D91774919A75 /* Pods-Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tests-dummy.m"; sourceTree = "<group>"; };
-		3456B6557DD40DE368634215 /* Pods-NotifiCrash-KeepLayout-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NotifiCrash-KeepLayout-Private.xcconfig"; sourceTree = "<group>"; };
-		36C68041A4529D74B04E5D52 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		39390405FA3B05322E414763 /* Crash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crash.h; path = Pod/Classes/Crash.h; sourceTree = "<group>"; };
-		43EE1CAB21FC72B2492FF9F7 /* NtfConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NtfConstants.h; path = Pod/Classes/NtfConstants.h; sourceTree = "<group>"; };
-		486783564B9A33350EAC0C53 /* Pods-Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tests-resources.sh"; sourceTree = "<group>"; };
-		56FC42AD4CC54A89C04F1456 /* Pods-NotifiCrash-KeepLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NotifiCrash-KeepLayout-prefix.pch"; sourceTree = "<group>"; };
-		58F31E908CDACF0268706C9C /* UIViewController+KeepLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+KeepLayout.m"; path = "Sources/UIViewController+KeepLayout.m"; sourceTree = "<group>"; };
-		64495C78AEE9C42CE30F014E /* Pods-NotifiCrash-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NotifiCrash-acknowledgements.plist"; sourceTree = "<group>"; };
-		6496086C0073BAADC43FB2FE /* Pods-NotifiCrash-NotifiCrash-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NotifiCrash-NotifiCrash-Private.xcconfig"; sourceTree = "<group>"; };
-		66F887EF805D549A7F737CFC /* Pods-NotifiCrash-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NotifiCrash-resources.sh"; sourceTree = "<group>"; };
-		69C6A3C7DF0A71DF7F73EE0F /* libPods-NotifiCrash.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NotifiCrash.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D6679AB2D46D0E4BDEF3983 /* libPods-NotifiCrash-KeepLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NotifiCrash-KeepLayout.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		74682AA07DF5D8172A05FD0F /* Pods-Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		759A7F85908ADFFB0640D35B /* KeepTypes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KeepTypes.m; path = Sources/KeepTypes.m; sourceTree = "<group>"; };
-		7BC3607F6FC4397042D4D64B /* Pods-NotifiCrash-NotifiCrash-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NotifiCrash-NotifiCrash-prefix.pch"; sourceTree = "<group>"; };
-		7C1E38062E8C28E6AD772A69 /* Crash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Crash.m; path = Pod/Classes/Crash.m; sourceTree = "<group>"; };
-		7C64CFDAD10CD045C0C9DB3A /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
-		7F7D372B6984645A92A14876 /* KeepAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KeepAttribute.h; path = Sources/KeepAttribute.h; sourceTree = "<group>"; };
-		877523FBA8B04D34D702974F /* KeepTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KeepTypes.h; path = Sources/KeepTypes.h; sourceTree = "<group>"; };
-		895B0ECF9153BCAB2B88CEA1 /* Pods-NotifiCrash-KeepLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NotifiCrash-KeepLayout-dummy.m"; sourceTree = "<group>"; };
-		8A54E132257C02B3FD8F06FB /* Pods-Tests-NotifiCrash-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-NotifiCrash-Private.xcconfig"; path = "../Pods-Tests-NotifiCrash/Pods-Tests-NotifiCrash-Private.xcconfig"; sourceTree = "<group>"; };
-		8C094B359E7255F6C73EE2F6 /* Pods-NotifiCrash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NotifiCrash.debug.xcconfig"; sourceTree = "<group>"; };
-		91142CB5257F1837EB8276B3 /* NotifiCrash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NotifiCrash.m; path = Pod/Classes/NotifiCrash.m; sourceTree = "<group>"; };
-		9180A69D3D9C5417E6945F14 /* UIViewController+KeepLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+KeepLayout.h"; path = "Sources/UIViewController+KeepLayout.h"; sourceTree = "<group>"; };
-		9E4A4A937E4B790EFB22AB75 /* KeepLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KeepLayoutConstraint.h; path = Sources/KeepLayoutConstraint.h; sourceTree = "<group>"; };
-		A349BC6444951A1ABEB42E5C /* KeepArray.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KeepArray.m; path = Sources/KeepArray.m; sourceTree = "<group>"; };
-		A9E74F2FC0D5D956528EAF2C /* libPods-NotifiCrash-NotifiCrash.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NotifiCrash-NotifiCrash.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0F771832A6EC0147103A523 /* KeepView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KeepView.h; path = Sources/KeepView.h; sourceTree = "<group>"; };
-		B5DEC4521455D36C824E0C36 /* Pods-Tests-NotifiCrash-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-Tests-NotifiCrash-prefix.pch"; path = "../Pods-Tests-NotifiCrash/Pods-Tests-NotifiCrash-prefix.pch"; sourceTree = "<group>"; };
-		BF906FDE7345B89922D15D07 /* Pods-Tests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tests-environment.h"; sourceTree = "<group>"; };
-		C3A86E65BDA69A528A040B34 /* KeepArray.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KeepArray.h; path = Sources/KeepArray.h; sourceTree = "<group>"; };
-		C65D4C6403F6FD6E38ACA09F /* Configuration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Configuration.m; path = Pod/Classes/Configuration.m; sourceTree = "<group>"; };
-		C887327B2B58B2B0A94C2D6A /* KeepLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KeepLayout.h; path = Sources/KeepLayout.h; sourceTree = "<group>"; };
-		CAD67753C1B264140678C731 /* Pods-NotifiCrash-KeepLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NotifiCrash-KeepLayout.xcconfig"; sourceTree = "<group>"; };
-		CAEB9589C1B5CF836DC231DD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D942C40BD7F8FE7A016455AF /* Pods-NotifiCrash-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NotifiCrash-dummy.m"; sourceTree = "<group>"; };
-		D9F57DEA899EECECD1475A16 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		DAF2BBCCA9AF02FDE0CD4639 /* Pods-NotifiCrash-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NotifiCrash-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E34692356DC02312920884BB /* Pods-NotifiCrash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NotifiCrash.release.xcconfig"; sourceTree = "<group>"; };
-		F43F11C47713DD6CFFE8A11F /* Pods-NotifiCrash-NotifiCrash.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NotifiCrash-NotifiCrash.xcconfig"; sourceTree = "<group>"; };
-		F54A6F9C18315AD704DE2BB2 /* KeepLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KeepLayoutConstraint.m; path = Sources/KeepLayoutConstraint.m; sourceTree = "<group>"; };
-		F9E811CDE0CDF0FDF140DF26 /* Pods-Tests-NotifiCrash-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-Tests-NotifiCrash-dummy.m"; path = "../Pods-Tests-NotifiCrash/Pods-Tests-NotifiCrash-dummy.m"; sourceTree = "<group>"; };
-		F9FC487ED80A930FB2162A29 /* libPods-Tests-NotifiCrash.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests-NotifiCrash.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD9C6222F79DA08742E5F5DC /* KeepView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KeepView.m; path = Sources/KeepView.m; sourceTree = "<group>"; };
+		054E3F5B8EF6AA7292889D93 /* KeepAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KeepAttribute.m; path = Sources/KeepAttribute.m; sourceTree = "<group>"; };
+		05EF126BA7F0B2F682C9FF91 /* Constants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		08A62B172EBBECB6062666B6 /* Pods-Tests-NotifiCrash-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-Tests-NotifiCrash-prefix.pch"; path = "../Pods-Tests-NotifiCrash/Pods-Tests-NotifiCrash-prefix.pch"; sourceTree = "<group>"; };
+		0DECB22F4B89AE154795AC6A /* KeepLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KeepLayoutConstraint.h; path = Sources/KeepLayoutConstraint.h; sourceTree = "<group>"; };
+		11A7BC9AD3F28F4685FBD46B /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		2009730EBECC5BAD4EBEF3BA /* Pods-NotifiCrash-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NotifiCrash-resources.sh"; sourceTree = "<group>"; };
+		209C49B9DF3D1EC3571CB691 /* libPods-NotifiCrash-NotifiCrash.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NotifiCrash-NotifiCrash.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FA0831E4DE515F56A9275DE /* Pods-NotifiCrash-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NotifiCrash-environment.h"; sourceTree = "<group>"; };
+		30BD5082B20C92D801950B9A /* KeepLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KeepLayout.h; path = Sources/KeepLayout.h; sourceTree = "<group>"; };
+		3D5F2EE87FFB83B26AF2285C /* libPods-NotifiCrash-KeepLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NotifiCrash-KeepLayout.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		552CB61CE143C6CE845C071E /* Pods-NotifiCrash-NotifiCrash-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NotifiCrash-NotifiCrash-prefix.pch"; sourceTree = "<group>"; };
+		5692BA9C62943F8917A5A826 /* Pods-Tests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tests-environment.h"; sourceTree = "<group>"; };
+		5752160EFE29F2C10C87AF09 /* Pods-Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		5CE90E6E1CC4A0D62C91CB63 /* NtfConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NtfConstants.h; sourceTree = "<group>"; };
+		61001BDB2866A5E24B8C4804 /* Pods-Tests-NotifiCrash.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-NotifiCrash.xcconfig"; path = "../Pods-Tests-NotifiCrash/Pods-Tests-NotifiCrash.xcconfig"; sourceTree = "<group>"; };
+		61A46E266FF84C22C17EC540 /* KeepAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KeepAttribute.h; path = Sources/KeepAttribute.h; sourceTree = "<group>"; };
+		64CC0BAA6D83717171AB58CF /* Pods-NotifiCrash-KeepLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NotifiCrash-KeepLayout-prefix.pch"; sourceTree = "<group>"; };
+		6ACFE780A8A01051467313F9 /* Pods-NotifiCrash-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NotifiCrash-dummy.m"; sourceTree = "<group>"; };
+		6B6F3832BBA2EE63F2DB2FEF /* Pods-NotifiCrash-KeepLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NotifiCrash-KeepLayout-dummy.m"; sourceTree = "<group>"; };
+		6DB7E662280F59224350E613 /* UIViewController+KeepLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+KeepLayout.h"; path = "Sources/UIViewController+KeepLayout.h"; sourceTree = "<group>"; };
+		6FD4B1E017DBC0228C6DB2EB /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		727E8CB16C0D1C7C035ED860 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		78CA6D24C57838A3FE33809E /* Pods-NotifiCrash-NotifiCrash.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NotifiCrash-NotifiCrash.xcconfig"; sourceTree = "<group>"; };
+		7BAAAADED76F10954034C707 /* Pods-NotifiCrash-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NotifiCrash-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7ED8FA565EE80AB744511C44 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7F8B14DFE0F303190B86E7EA /* Pods-NotifiCrash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NotifiCrash.release.xcconfig"; sourceTree = "<group>"; };
+		7FE186B1C2499FB7FC66291A /* UIViewController+KeepLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+KeepLayout.m"; path = "Sources/UIViewController+KeepLayout.m"; sourceTree = "<group>"; };
+		81B12E4C714F4AF0BAD6BFD6 /* libPods-Tests-NotifiCrash.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests-NotifiCrash.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C3ADB82951E2756BD4B92EA /* Configuration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
+		913E25D79AC07187EDEB2AB3 /* Pods-NotifiCrash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NotifiCrash.debug.xcconfig"; sourceTree = "<group>"; };
+		92639AB77CB353F7E588C473 /* Pods-NotifiCrash-KeepLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NotifiCrash-KeepLayout.xcconfig"; sourceTree = "<group>"; };
+		94476811FD24A2521F3B9781 /* Crash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Crash.m; sourceTree = "<group>"; };
+		9A07B9937C0FA26D31204AA1 /* Pods-Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9E19580C073C6ABFEB5FBDD7 /* KeepTypes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KeepTypes.m; path = Sources/KeepTypes.m; sourceTree = "<group>"; };
+		A09D38E47EBAB96D5726C055 /* NotifiCrash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NotifiCrash.h; sourceTree = "<group>"; };
+		A13C5E9AF837201BBA33486F /* Pods-NotifiCrash-NotifiCrash-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NotifiCrash-NotifiCrash-dummy.m"; sourceTree = "<group>"; };
+		A40C9C94791FE548420EF9C4 /* Pods-Tests-NotifiCrash-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-NotifiCrash-Private.xcconfig"; path = "../Pods-Tests-NotifiCrash/Pods-Tests-NotifiCrash-Private.xcconfig"; sourceTree = "<group>"; };
+		A9403FFA281973B4DCD0FF3D /* KeepView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KeepView.m; path = Sources/KeepView.m; sourceTree = "<group>"; };
+		AEE7320DA5EC2CE07FEB454A /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B28A3C00677C5ABDE63161A5 /* KeepLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KeepLayoutConstraint.m; path = Sources/KeepLayoutConstraint.m; sourceTree = "<group>"; };
+		B4CBCD9B2F8391CC286D6B90 /* KeepView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KeepView.h; path = Sources/KeepView.h; sourceTree = "<group>"; };
+		BCCB6A2C4922E2EFBC7EF9FA /* Pods-Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tests-dummy.m"; sourceTree = "<group>"; };
+		C2B1ABC44FE7D49D638D024B /* Pods-Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tests-resources.sh"; sourceTree = "<group>"; };
+		D51DD028D1FE0EF4551D26BD /* Pods-NotifiCrash-KeepLayout-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NotifiCrash-KeepLayout-Private.xcconfig"; sourceTree = "<group>"; };
+		D552C497DF420988A7EBAF7F /* Pods-NotifiCrash-NotifiCrash-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NotifiCrash-NotifiCrash-Private.xcconfig"; sourceTree = "<group>"; };
+		DB686DD38558C4086B213584 /* Configuration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
+		DEA61DD5203B527BD58CECA2 /* Pods-NotifiCrash-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NotifiCrash-acknowledgements.plist"; sourceTree = "<group>"; };
+		DF68E9DE4A697FB78D2EE406 /* KeepArray.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KeepArray.m; path = Sources/KeepArray.m; sourceTree = "<group>"; };
+		E24C4A45D36A5A12E48D9AEA /* libPods-NotifiCrash.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NotifiCrash.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E52F1BF8D73D7BB8D189DFF3 /* Crash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Crash.h; sourceTree = "<group>"; };
+		EB93529D90D66FC0A0041662 /* Pods-Tests-NotifiCrash-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-Tests-NotifiCrash-dummy.m"; path = "../Pods-Tests-NotifiCrash/Pods-Tests-NotifiCrash-dummy.m"; sourceTree = "<group>"; };
+		EBC2F75387E25E8F3F66F0D1 /* KeepArray.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KeepArray.h; path = Sources/KeepArray.h; sourceTree = "<group>"; };
+		F2694716F7F80CA7000AF0D7 /* KeepTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KeepTypes.h; path = Sources/KeepTypes.h; sourceTree = "<group>"; };
+		F41561C9C98D24E80B66D9DB /* NotifiCrash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NotifiCrash.m; sourceTree = "<group>"; };
+		F862847147363E5947D6FE71 /* Constants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		20FB7A6AA44F63AAA78C017B /* Frameworks */ = {
+		374B1F0574C5E07181449600 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6A380FB5D1A8EC8C4F40FC4 /* Foundation.framework in Frameworks */,
+				3BECE098A0E36564AA02FDE1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		80B876574C182301AADDF8FA /* Frameworks */ = {
+		6CA9EB600E9AEACFB0CD745A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E35A79B0DE8939EAD7B2BD7 /* Foundation.framework in Frameworks */,
+				E7D2327237D4F3C6E572D13E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D574977FE518B62868EC0D27 /* Frameworks */ = {
+		A177FC107FE9DAA23CEC6A3C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3110CB1FC37F650CA34D3118 /* Foundation.framework in Frameworks */,
+				E20446A3624F3E19293EF869 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D66C9087B02CA0888DF39976 /* Frameworks */ = {
+		B0CBB60564347BB222309FA9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C079371D3D9B6640680643AD /* Foundation.framework in Frameworks */,
+				745054597F1D7DB0F52DE285 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4DA432F72C044BB16DF85CF /* Frameworks */ = {
+		F7258C5C1C3F497A20C66F09 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80897D97FA5E57B2036B5DD0 /* Foundation.framework in Frameworks */,
+				57201401E74A138EE5051F7D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		28AC2AD8419F7D6B2F32B503 /* Products */ = {
+		12E3A2C3DBC91AADE817E7D1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				69C6A3C7DF0A71DF7F73EE0F /* libPods-NotifiCrash.a */,
-				6D6679AB2D46D0E4BDEF3983 /* libPods-NotifiCrash-KeepLayout.a */,
-				A9E74F2FC0D5D956528EAF2C /* libPods-NotifiCrash-NotifiCrash.a */,
-				0B110DE77140980D0DC5A602 /* libPods-Tests.a */,
-				F9FC487ED80A930FB2162A29 /* libPods-Tests-NotifiCrash.a */,
+				202494C6057B0D31F397A242 /* KeepLayout */,
 			);
-			name = Products;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		3FC3D5938E09CC8708033671 /* Targets Support Files */ = {
+		194210A8E14E234BFEAC2924 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				FDFE54028B369D97433D77FA /* Pods-NotifiCrash */,
-				640BF88FA95537A21FDEFBF3 /* Pods-Tests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		640BF88FA95537A21FDEFBF3 /* Pods-Tests */ = {
-			isa = PBXGroup;
-			children = (
-				025EB24EA945B0E988D2187D /* Pods-Tests-acknowledgements.markdown */,
-				74682AA07DF5D8172A05FD0F /* Pods-Tests-acknowledgements.plist */,
-				217C34DF96F6D91774919A75 /* Pods-Tests-dummy.m */,
-				BF906FDE7345B89922D15D07 /* Pods-Tests-environment.h */,
-				486783564B9A33350EAC0C53 /* Pods-Tests-resources.sh */,
-				D9F57DEA899EECECD1475A16 /* Pods-Tests.debug.xcconfig */,
-				7C64CFDAD10CD045C0C9DB3A /* Pods-Tests.release.xcconfig */,
-			);
-			name = "Pods-Tests";
-			path = "Target Support Files/Pods-Tests";
-			sourceTree = "<group>";
-		};
-		690AB99D00EB9D7E84BCF4F9 /* NotifiCrash */ = {
-			isa = PBXGroup;
-			children = (
-				1CAA7939EB74E36A29973057 /* Configuration.h */,
-				C65D4C6403F6FD6E38ACA09F /* Configuration.m */,
-				39390405FA3B05322E414763 /* Crash.h */,
-				7C1E38062E8C28E6AD772A69 /* Crash.m */,
-				10D51BE2C2AD7D933A9635E0 /* NotifiCrash.h */,
-				91142CB5257F1837EB8276B3 /* NotifiCrash.m */,
-				43EE1CAB21FC72B2492FF9F7 /* NtfConstants.h */,
-				D14F00B3CCBAD56D5BFBEBA7 /* Support Files */,
-			);
-			name = NotifiCrash;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		74BAC4775BAB56F8212BCC69 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				CAD67753C1B264140678C731 /* Pods-NotifiCrash-KeepLayout.xcconfig */,
-				3456B6557DD40DE368634215 /* Pods-NotifiCrash-KeepLayout-Private.xcconfig */,
-				895B0ECF9153BCAB2B88CEA1 /* Pods-NotifiCrash-KeepLayout-dummy.m */,
-				56FC42AD4CC54A89C04F1456 /* Pods-NotifiCrash-KeepLayout-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-NotifiCrash-KeepLayout";
-			sourceTree = "<group>";
-		};
-		82007595EB60185292843E77 = {
-			isa = PBXGroup;
-			children = (
-				36C68041A4529D74B04E5D52 /* Podfile */,
-				CE7DD88E7809A7A8B57A45F9 /* Development Pods */,
-				D242F8E868F204091EAAEFA4 /* Frameworks */,
-				DF40D4F4A8F33B63CB16F7DE /* Pods */,
-				28AC2AD8419F7D6B2F32B503 /* Products */,
-				3FC3D5938E09CC8708033671 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		8A354C4A4BF1C865257982AC /* KeepLayout */ = {
-			isa = PBXGroup;
-			children = (
-				C3A86E65BDA69A528A040B34 /* KeepArray.h */,
-				A349BC6444951A1ABEB42E5C /* KeepArray.m */,
-				7F7D372B6984645A92A14876 /* KeepAttribute.h */,
-				0AEBFD2F35F16C321AACD936 /* KeepAttribute.m */,
-				C887327B2B58B2B0A94C2D6A /* KeepLayout.h */,
-				9E4A4A937E4B790EFB22AB75 /* KeepLayoutConstraint.h */,
-				F54A6F9C18315AD704DE2BB2 /* KeepLayoutConstraint.m */,
-				877523FBA8B04D34D702974F /* KeepTypes.h */,
-				759A7F85908ADFFB0640D35B /* KeepTypes.m */,
-				B0F771832A6EC0147103A523 /* KeepView.h */,
-				FD9C6222F79DA08742E5F5DC /* KeepView.m */,
-				9180A69D3D9C5417E6945F14 /* UIViewController+KeepLayout.h */,
-				58F31E908CDACF0268706C9C /* UIViewController+KeepLayout.m */,
-				74BAC4775BAB56F8212BCC69 /* Support Files */,
-			);
-			path = KeepLayout;
-			sourceTree = "<group>";
-		};
-		CE7DD88E7809A7A8B57A45F9 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				690AB99D00EB9D7E84BCF4F9 /* NotifiCrash */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		D14F00B3CCBAD56D5BFBEBA7 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				F43F11C47713DD6CFFE8A11F /* Pods-NotifiCrash-NotifiCrash.xcconfig */,
-				6496086C0073BAADC43FB2FE /* Pods-NotifiCrash-NotifiCrash-Private.xcconfig */,
-				169FEB3B1B4B396D16DD6551 /* Pods-NotifiCrash-NotifiCrash-dummy.m */,
-				7BC3607F6FC4397042D4D64B /* Pods-NotifiCrash-NotifiCrash-prefix.pch */,
-				12C386EC75035DDC144728F8 /* Pods-Tests-NotifiCrash.xcconfig */,
-				8A54E132257C02B3FD8F06FB /* Pods-Tests-NotifiCrash-Private.xcconfig */,
-				F9E811CDE0CDF0FDF140DF26 /* Pods-Tests-NotifiCrash-dummy.m */,
-				B5DEC4521455D36C824E0C36 /* Pods-Tests-NotifiCrash-prefix.pch */,
+				78CA6D24C57838A3FE33809E /* Pods-NotifiCrash-NotifiCrash.xcconfig */,
+				D552C497DF420988A7EBAF7F /* Pods-NotifiCrash-NotifiCrash-Private.xcconfig */,
+				A13C5E9AF837201BBA33486F /* Pods-NotifiCrash-NotifiCrash-dummy.m */,
+				552CB61CE143C6CE845C071E /* Pods-NotifiCrash-NotifiCrash-prefix.pch */,
+				61001BDB2866A5E24B8C4804 /* Pods-Tests-NotifiCrash.xcconfig */,
+				A40C9C94791FE548420EF9C4 /* Pods-Tests-NotifiCrash-Private.xcconfig */,
+				EB93529D90D66FC0A0041662 /* Pods-Tests-NotifiCrash-dummy.m */,
+				08A62B172EBBECB6062666B6 /* Pods-Tests-NotifiCrash-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/Pods-NotifiCrash-NotifiCrash";
 			sourceTree = "<group>";
 		};
-		D242F8E868F204091EAAEFA4 /* Frameworks */ = {
+		202494C6057B0D31F397A242 /* KeepLayout */ = {
 			isa = PBXGroup;
 			children = (
-				D484ADA5D81DA296C6D22F66 /* iOS */,
+				EBC2F75387E25E8F3F66F0D1 /* KeepArray.h */,
+				DF68E9DE4A697FB78D2EE406 /* KeepArray.m */,
+				61A46E266FF84C22C17EC540 /* KeepAttribute.h */,
+				054E3F5B8EF6AA7292889D93 /* KeepAttribute.m */,
+				30BD5082B20C92D801950B9A /* KeepLayout.h */,
+				0DECB22F4B89AE154795AC6A /* KeepLayoutConstraint.h */,
+				B28A3C00677C5ABDE63161A5 /* KeepLayoutConstraint.m */,
+				F2694716F7F80CA7000AF0D7 /* KeepTypes.h */,
+				9E19580C073C6ABFEB5FBDD7 /* KeepTypes.m */,
+				B4CBCD9B2F8391CC286D6B90 /* KeepView.h */,
+				A9403FFA281973B4DCD0FF3D /* KeepView.m */,
+				6DB7E662280F59224350E613 /* UIViewController+KeepLayout.h */,
+				7FE186B1C2499FB7FC66291A /* UIViewController+KeepLayout.m */,
+				2B5F214AC6DD99837829AB2D /* Support Files */,
+			);
+			path = KeepLayout;
+			sourceTree = "<group>";
+		};
+		2B5F214AC6DD99837829AB2D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				92639AB77CB353F7E588C473 /* Pods-NotifiCrash-KeepLayout.xcconfig */,
+				D51DD028D1FE0EF4551D26BD /* Pods-NotifiCrash-KeepLayout-Private.xcconfig */,
+				6B6F3832BBA2EE63F2DB2FEF /* Pods-NotifiCrash-KeepLayout-dummy.m */,
+				64CC0BAA6D83717171AB58CF /* Pods-NotifiCrash-KeepLayout-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-NotifiCrash-KeepLayout";
+			sourceTree = "<group>";
+		};
+		3DE261AD776BDE552E94D3DE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8C3ADB82951E2756BD4B92EA /* Configuration.h */,
+				DB686DD38558C4086B213584 /* Configuration.m */,
+				05EF126BA7F0B2F682C9FF91 /* Constants.h */,
+				F862847147363E5947D6FE71 /* Constants.m */,
+				E52F1BF8D73D7BB8D189DFF3 /* Crash.h */,
+				94476811FD24A2521F3B9781 /* Crash.m */,
+				A09D38E47EBAB96D5726C055 /* NotifiCrash.h */,
+				F41561C9C98D24E80B66D9DB /* NotifiCrash.m */,
+				5CE90E6E1CC4A0D62C91CB63 /* NtfConstants.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		564E7BC79C61E42B0DF645E6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E24C4A45D36A5A12E48D9AEA /* libPods-NotifiCrash.a */,
+				3D5F2EE87FFB83B26AF2285C /* libPods-NotifiCrash-KeepLayout.a */,
+				209C49B9DF3D1EC3571CB691 /* libPods-NotifiCrash-NotifiCrash.a */,
+				6FD4B1E017DBC0228C6DB2EB /* libPods-Tests.a */,
+				81B12E4C714F4AF0BAD6BFD6 /* libPods-Tests-NotifiCrash.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5C14BA13C8BDFB41E9FD9320 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67E82C30684AB1AD6E58D5E1 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D484ADA5D81DA296C6D22F66 /* iOS */ = {
+		5D8CB01544033EF5FFC87479 /* Pods-Tests */ = {
 			isa = PBXGroup;
 			children = (
-				CAEB9589C1B5CF836DC231DD /* Foundation.framework */,
+				9A07B9937C0FA26D31204AA1 /* Pods-Tests-acknowledgements.markdown */,
+				5752160EFE29F2C10C87AF09 /* Pods-Tests-acknowledgements.plist */,
+				BCCB6A2C4922E2EFBC7EF9FA /* Pods-Tests-dummy.m */,
+				5692BA9C62943F8917A5A826 /* Pods-Tests-environment.h */,
+				C2B1ABC44FE7D49D638D024B /* Pods-Tests-resources.sh */,
+				AEE7320DA5EC2CE07FEB454A /* Pods-Tests.debug.xcconfig */,
+				11A7BC9AD3F28F4685FBD46B /* Pods-Tests.release.xcconfig */,
+			);
+			name = "Pods-Tests";
+			path = "Target Support Files/Pods-Tests";
+			sourceTree = "<group>";
+		};
+		67E82C30684AB1AD6E58D5E1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				727E8CB16C0D1C7C035ED860 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		DF40D4F4A8F33B63CB16F7DE /* Pods */ = {
+		81910E133F0145E091F31886 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8A354C4A4BF1C865257982AC /* KeepLayout */,
+				A2E4FE3CEC252465EC54C32F /* Pods-NotifiCrash */,
+				5D8CB01544033EF5FFC87479 /* Pods-Tests */,
 			);
-			name = Pods;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		FDFE54028B369D97433D77FA /* Pods-NotifiCrash */ = {
+		A2E4FE3CEC252465EC54C32F /* Pods-NotifiCrash */ = {
 			isa = PBXGroup;
 			children = (
-				DAF2BBCCA9AF02FDE0CD4639 /* Pods-NotifiCrash-acknowledgements.markdown */,
-				64495C78AEE9C42CE30F014E /* Pods-NotifiCrash-acknowledgements.plist */,
-				D942C40BD7F8FE7A016455AF /* Pods-NotifiCrash-dummy.m */,
-				0724C6C02CDDE1D5B4857A71 /* Pods-NotifiCrash-environment.h */,
-				66F887EF805D549A7F737CFC /* Pods-NotifiCrash-resources.sh */,
-				8C094B359E7255F6C73EE2F6 /* Pods-NotifiCrash.debug.xcconfig */,
-				E34692356DC02312920884BB /* Pods-NotifiCrash.release.xcconfig */,
+				7BAAAADED76F10954034C707 /* Pods-NotifiCrash-acknowledgements.markdown */,
+				DEA61DD5203B527BD58CECA2 /* Pods-NotifiCrash-acknowledgements.plist */,
+				6ACFE780A8A01051467313F9 /* Pods-NotifiCrash-dummy.m */,
+				2FA0831E4DE515F56A9275DE /* Pods-NotifiCrash-environment.h */,
+				2009730EBECC5BAD4EBEF3BA /* Pods-NotifiCrash-resources.sh */,
+				913E25D79AC07187EDEB2AB3 /* Pods-NotifiCrash.debug.xcconfig */,
+				7F8B14DFE0F303190B86E7EA /* Pods-NotifiCrash.release.xcconfig */,
 			);
 			name = "Pods-NotifiCrash";
 			path = "Target Support Files/Pods-NotifiCrash";
 			sourceTree = "<group>";
 		};
+		A44BFEE839ABA272FCF23D72 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BBCE644EAE9A499E6AFCCBC8 /* NotifiCrash */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		BBCE644EAE9A499E6AFCCBC8 /* NotifiCrash */ = {
+			isa = PBXGroup;
+			children = (
+				F89EF6C25CEFBA950F6F25BC /* Pod */,
+				194210A8E14E234BFEAC2924 /* Support Files */,
+			);
+			name = NotifiCrash;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		CEA919CB778A5A5A590A5BD1 = {
+			isa = PBXGroup;
+			children = (
+				7ED8FA565EE80AB744511C44 /* Podfile */,
+				A44BFEE839ABA272FCF23D72 /* Development Pods */,
+				5C14BA13C8BDFB41E9FD9320 /* Frameworks */,
+				12E3A2C3DBC91AADE817E7D1 /* Pods */,
+				564E7BC79C61E42B0DF645E6 /* Products */,
+				81910E133F0145E091F31886 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		F89EF6C25CEFBA950F6F25BC /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				3DE261AD776BDE552E94D3DE /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3AE6929F33D297F83CCCC587 /* Headers */ = {
+		37161C9F9A373EF91CE4087F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF0DB410BA75FAC9EB4468D9 /* KeepArray.h in Headers */,
-				F8B4D537A6C8BD4CB7619531 /* KeepAttribute.h in Headers */,
-				20CC0AE26691B4C3764347D6 /* KeepLayout.h in Headers */,
-				0BBD991BEF638B59BF59CC69 /* KeepLayoutConstraint.h in Headers */,
-				1E2DAEC22E3371E551C568F9 /* KeepTypes.h in Headers */,
-				49D80A4E32A8FD49E58BC430 /* KeepView.h in Headers */,
-				80AA46D97D590E304AC06CCC /* UIViewController+KeepLayout.h in Headers */,
+				0C1AA2909BDCA57593F057DE /* KeepArray.h in Headers */,
+				2615161EFB027646EDC4D750 /* KeepAttribute.h in Headers */,
+				B4C643FE73C87D456240F5B8 /* KeepLayout.h in Headers */,
+				9A2A7B0DAB6BDF2D0C226A18 /* KeepLayoutConstraint.h in Headers */,
+				41641BA7A5344511D40EDFC7 /* KeepTypes.h in Headers */,
+				528B38C9E372EDC2F4C5F281 /* KeepView.h in Headers */,
+				C4A69383190DAFFC3D9FBA2D /* UIViewController+KeepLayout.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5EA374663D9ED12F885C2849 /* Headers */ = {
+		551DAA71263F78F2D0E2567B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBDD93F3B3363566A6D8BC2B /* Configuration.h in Headers */,
-				18101B9780FB50D03FFA7546 /* Crash.h in Headers */,
-				1DEAFA0EC272C1BAC1A8B1B3 /* NotifiCrash.h in Headers */,
-				B14706E94CF9AE16481EBD5E /* NtfConstants.h in Headers */,
+				B0D25C8551A70B3BEFBF18A0 /* Configuration.h in Headers */,
+				0F461FA9FD2B57032B87F799 /* Constants.h in Headers */,
+				4D78264EA346419D5B9D1D7D /* Crash.h in Headers */,
+				1BA4A05AAE06960E8E8324CB /* NotifiCrash.h in Headers */,
+				785D7A73291E352EDD518E82 /* NtfConstants.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB27551A501635A8C3D4DBFB /* Headers */ = {
+		6D8B6EFC164ACF2F002754B7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38577350C742248DBD6A127B /* Configuration.h in Headers */,
-				E2577540D912B32BE61D885C /* Crash.h in Headers */,
-				21F1FD981082D0ACCB21AE37 /* NotifiCrash.h in Headers */,
-				41B3F9DC5D09194173EF2442 /* NtfConstants.h in Headers */,
+				F1C95AA75F1BB43DAAF82ACE /* Configuration.h in Headers */,
+				B2B839ADC4267A5FC6B78A63 /* Constants.h in Headers */,
+				DC0530008EE2C65C845542FD /* Crash.h in Headers */,
+				D56B37492FC569346613FD20 /* NotifiCrash.h in Headers */,
+				5109B09FCAA6E53148264F61 /* NtfConstants.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		36128FAC6C79A0B6A1A6C8A7 /* Pods-Tests-NotifiCrash */ = {
+		02B984775E0335F656F7B9A1 /* Pods-NotifiCrash */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AD3F910FCD2DFE057ADDB320 /* Build configuration list for PBXNativeTarget "Pods-Tests-NotifiCrash" */;
+			buildConfigurationList = 247E5419375BE5856039555A /* Build configuration list for PBXNativeTarget "Pods-NotifiCrash" */;
 			buildPhases = (
-				72664DFC98B5316DE8C0425B /* Sources */,
-				D574977FE518B62868EC0D27 /* Frameworks */,
-				DB27551A501635A8C3D4DBFB /* Headers */,
+				A1C1FF0451B163BA2EF84A10 /* Sources */,
+				374B1F0574C5E07181449600 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = "Pods-Tests-NotifiCrash";
-			productName = "Pods-Tests-NotifiCrash";
-			productReference = F9FC487ED80A930FB2162A29 /* libPods-Tests-NotifiCrash.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		59E466E155A06A04EDDC40F3 /* Pods-NotifiCrash-NotifiCrash */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 95F3510C6B8C93710085B9B6 /* Build configuration list for PBXNativeTarget "Pods-NotifiCrash-NotifiCrash" */;
-			buildPhases = (
-				B84A4B98ABB12C6C6DB46ACF /* Sources */,
-				80B876574C182301AADDF8FA /* Frameworks */,
-				5EA374663D9ED12F885C2849 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-NotifiCrash-NotifiCrash";
-			productName = "Pods-NotifiCrash-NotifiCrash";
-			productReference = A9E74F2FC0D5D956528EAF2C /* libPods-NotifiCrash-NotifiCrash.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		E983FB34E9D62F0E4DF75E97 /* Pods-NotifiCrash */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EB39598548AAE515196217D2 /* Build configuration list for PBXNativeTarget "Pods-NotifiCrash" */;
-			buildPhases = (
-				AC310628CD3DCDB2E27E72F5 /* Sources */,
-				D66C9087B02CA0888DF39976 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				929C5A09FD095DD777726FF7 /* PBXTargetDependency */,
-				613DF1A13DEB66AFC6C983FF /* PBXTargetDependency */,
+				2D49A82CEF124F487F22D624 /* PBXTargetDependency */,
+				DE7909A3C0D4D82116595E39 /* PBXTargetDependency */,
 			);
 			name = "Pods-NotifiCrash";
 			productName = "Pods-NotifiCrash";
-			productReference = 69C6A3C7DF0A71DF7F73EE0F /* libPods-NotifiCrash.a */;
+			productReference = E24C4A45D36A5A12E48D9AEA /* libPods-NotifiCrash.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		ED538DCDD7043FD418AC50D5 /* Pods-Tests */ = {
+		2731FADE4F333F63FFA5FBE7 /* Pods-NotifiCrash-KeepLayout */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D2AC39D9E62B2A9D34F0F8E2 /* Build configuration list for PBXNativeTarget "Pods-Tests" */;
+			buildConfigurationList = BF68B83B89C324C942FECD5D /* Build configuration list for PBXNativeTarget "Pods-NotifiCrash-KeepLayout" */;
 			buildPhases = (
-				F46F40ABC07F738B75A6B0F2 /* Sources */,
-				20FB7A6AA44F63AAA78C017B /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5568128509076FFEA7AECBF3 /* PBXTargetDependency */,
-			);
-			name = "Pods-Tests";
-			productName = "Pods-Tests";
-			productReference = 0B110DE77140980D0DC5A602 /* libPods-Tests.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		FBE9A26B3671107F58851DC8 /* Pods-NotifiCrash-KeepLayout */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F5F0F0A647B3110F2B65A54D /* Build configuration list for PBXNativeTarget "Pods-NotifiCrash-KeepLayout" */;
-			buildPhases = (
-				41DAAE49FC381BAB2F1940A3 /* Sources */,
-				E4DA432F72C044BB16DF85CF /* Frameworks */,
-				3AE6929F33D297F83CCCC587 /* Headers */,
+				788F272CCEB206C43921F97C /* Sources */,
+				6CA9EB600E9AEACFB0CD745A /* Frameworks */,
+				37161C9F9A373EF91CE4087F /* Headers */,
 			);
 			buildRules = (
 			);
@@ -455,306 +430,217 @@
 			);
 			name = "Pods-NotifiCrash-KeepLayout";
 			productName = "Pods-NotifiCrash-KeepLayout";
-			productReference = 6D6679AB2D46D0E4BDEF3983 /* libPods-NotifiCrash-KeepLayout.a */;
+			productReference = 3D5F2EE87FFB83B26AF2285C /* libPods-NotifiCrash-KeepLayout.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		5696A2CF9E0C15614A865BB7 /* Pods-Tests-NotifiCrash */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 735FB194C8815342CA5F14A1 /* Build configuration list for PBXNativeTarget "Pods-Tests-NotifiCrash" */;
+			buildPhases = (
+				5C74029C53621AD38E1E1CDE /* Sources */,
+				B0CBB60564347BB222309FA9 /* Frameworks */,
+				6D8B6EFC164ACF2F002754B7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Tests-NotifiCrash";
+			productName = "Pods-Tests-NotifiCrash";
+			productReference = 81B12E4C714F4AF0BAD6BFD6 /* libPods-Tests-NotifiCrash.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E362E6C28CA266080A1E0FA7 /* Pods-NotifiCrash-NotifiCrash */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87735F71032B257DB15F1E4C /* Build configuration list for PBXNativeTarget "Pods-NotifiCrash-NotifiCrash" */;
+			buildPhases = (
+				C5FDA9E1E5732CC9386B1FDE /* Sources */,
+				F7258C5C1C3F497A20C66F09 /* Frameworks */,
+				551DAA71263F78F2D0E2567B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-NotifiCrash-NotifiCrash";
+			productName = "Pods-NotifiCrash-NotifiCrash";
+			productReference = 209C49B9DF3D1EC3571CB691 /* libPods-NotifiCrash-NotifiCrash.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F8D0564A2FFD2B49A9AFDD91 /* Pods-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 190DB7A1CC8C32787E3FEA86 /* Build configuration list for PBXNativeTarget "Pods-Tests" */;
+			buildPhases = (
+				5E775CD1F4BA9F9964EF44D2 /* Sources */,
+				A177FC107FE9DAA23CEC6A3C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F69F0D4BD16AD05B0D635E65 /* PBXTargetDependency */,
+			);
+			name = "Pods-Tests";
+			productName = "Pods-Tests";
+			productReference = 6FD4B1E017DBC0228C6DB2EB /* libPods-Tests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E917DBDA3793598D72E67C68 /* Project object */ = {
+		3E416A292C132E69A4F658DF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = 48B67A3185C2660485E65CC7 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = A79D7E6CB72E934EB44C54CB /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 82007595EB60185292843E77;
-			productRefGroup = 28AC2AD8419F7D6B2F32B503 /* Products */;
+			mainGroup = CEA919CB778A5A5A590A5BD1;
+			productRefGroup = 564E7BC79C61E42B0DF645E6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E983FB34E9D62F0E4DF75E97 /* Pods-NotifiCrash */,
-				FBE9A26B3671107F58851DC8 /* Pods-NotifiCrash-KeepLayout */,
-				59E466E155A06A04EDDC40F3 /* Pods-NotifiCrash-NotifiCrash */,
-				ED538DCDD7043FD418AC50D5 /* Pods-Tests */,
-				36128FAC6C79A0B6A1A6C8A7 /* Pods-Tests-NotifiCrash */,
+				02B984775E0335F656F7B9A1 /* Pods-NotifiCrash */,
+				2731FADE4F333F63FFA5FBE7 /* Pods-NotifiCrash-KeepLayout */,
+				E362E6C28CA266080A1E0FA7 /* Pods-NotifiCrash-NotifiCrash */,
+				F8D0564A2FFD2B49A9AFDD91 /* Pods-Tests */,
+				5696A2CF9E0C15614A865BB7 /* Pods-Tests-NotifiCrash */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		41DAAE49FC381BAB2F1940A3 /* Sources */ = {
+		5C74029C53621AD38E1E1CDE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EBA46909201897844C4CD73 /* KeepArray.m in Sources */,
-				506EE604EC9053D0B4976313 /* KeepAttribute.m in Sources */,
-				F2CEF6DD880FCB60BE90E59E /* KeepLayoutConstraint.m in Sources */,
-				51DC65D3DF334A3D070B51BF /* KeepTypes.m in Sources */,
-				B354AFE4C4BDE87B18FF0E4A /* KeepView.m in Sources */,
-				2C34E3BA305AD834F93D1BDE /* Pods-NotifiCrash-KeepLayout-dummy.m in Sources */,
-				60A9BEE743D40F9822A1729F /* UIViewController+KeepLayout.m in Sources */,
+				2D0EE6E564AD685EF60A5D38 /* Configuration.m in Sources */,
+				B0F60F69A63B460CDB01A6BF /* Constants.m in Sources */,
+				4B7098BEAAAF0409EF7DFDB9 /* Crash.m in Sources */,
+				72BA659B1DE59925B5474D0D /* NotifiCrash.m in Sources */,
+				8E5E5881839437EF5C6378D0 /* Pods-Tests-NotifiCrash-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		72664DFC98B5316DE8C0425B /* Sources */ = {
+		5E775CD1F4BA9F9964EF44D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				132A0326E47CFAE5F2C8A242 /* Configuration.m in Sources */,
-				19AEF6E14FC5ED980E4EEBEB /* Crash.m in Sources */,
-				D7E99342AE821E99CFB56496 /* NotifiCrash.m in Sources */,
-				FBA4C7B1D9BFBDD05FD8B6A1 /* Pods-Tests-NotifiCrash-dummy.m in Sources */,
+				167C65E48CB14BCB48D77F4D /* Pods-Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC310628CD3DCDB2E27E72F5 /* Sources */ = {
+		788F272CCEB206C43921F97C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72D30F7960AC2E80F396307C /* Pods-NotifiCrash-dummy.m in Sources */,
+				EFC051DB11FDA94577904B15 /* KeepArray.m in Sources */,
+				CDCAD7F9DC2A01B9DE3253F8 /* KeepAttribute.m in Sources */,
+				7AE7DEF184B9D077E4397DA5 /* KeepLayoutConstraint.m in Sources */,
+				D42C33FAB92494CB4B9DD972 /* KeepTypes.m in Sources */,
+				2951BDB124179A22FDD1E6AF /* KeepView.m in Sources */,
+				0C0639B26A525E35BFF44B1E /* Pods-NotifiCrash-KeepLayout-dummy.m in Sources */,
+				F769CBD36E44D0DB5EDE547E /* UIViewController+KeepLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B84A4B98ABB12C6C6DB46ACF /* Sources */ = {
+		A1C1FF0451B163BA2EF84A10 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B841439FCFF8B9B5DD44170E /* Configuration.m in Sources */,
-				F866AEB1DEFDC0F0BEBA022E /* Crash.m in Sources */,
-				4DA54B4FA898CB9144C50461 /* NotifiCrash.m in Sources */,
-				D280FEE426E4D67E896CBD15 /* Pods-NotifiCrash-NotifiCrash-dummy.m in Sources */,
+				7AE1A3FDFAB780D5BF9450D1 /* Pods-NotifiCrash-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F46F40ABC07F738B75A6B0F2 /* Sources */ = {
+		C5FDA9E1E5732CC9386B1FDE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4237F7FDE50D9C1D64AF898 /* Pods-Tests-dummy.m in Sources */,
+				FE3337763D22DD24B80AFE24 /* Configuration.m in Sources */,
+				DE8094E6819098588BDAE6C7 /* Constants.m in Sources */,
+				978A63CEC346950ACC22DBB5 /* Crash.m in Sources */,
+				038BAF151840AD640CF2450B /* NotifiCrash.m in Sources */,
+				6C765A6890F9D5B398F2F909 /* Pods-NotifiCrash-NotifiCrash-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5568128509076FFEA7AECBF3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-Tests-NotifiCrash";
-			target = 36128FAC6C79A0B6A1A6C8A7 /* Pods-Tests-NotifiCrash */;
-			targetProxy = A678F4261DB57267B5612479 /* PBXContainerItemProxy */;
-		};
-		613DF1A13DEB66AFC6C983FF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-NotifiCrash-NotifiCrash";
-			target = 59E466E155A06A04EDDC40F3 /* Pods-NotifiCrash-NotifiCrash */;
-			targetProxy = CA10F7C622A1A89A85164134 /* PBXContainerItemProxy */;
-		};
-		929C5A09FD095DD777726FF7 /* PBXTargetDependency */ = {
+		2D49A82CEF124F487F22D624 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-NotifiCrash-KeepLayout";
-			target = FBE9A26B3671107F58851DC8 /* Pods-NotifiCrash-KeepLayout */;
-			targetProxy = 32C712BBBBF6D57AA71F2E15 /* PBXContainerItemProxy */;
+			target = 2731FADE4F333F63FFA5FBE7 /* Pods-NotifiCrash-KeepLayout */;
+			targetProxy = 219676EFA9CB1AF1FA9A8AD1 /* PBXContainerItemProxy */;
+		};
+		DE7909A3C0D4D82116595E39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-NotifiCrash-NotifiCrash";
+			target = E362E6C28CA266080A1E0FA7 /* Pods-NotifiCrash-NotifiCrash */;
+			targetProxy = C0D60D13B45F83FCED5EF1BB /* PBXContainerItemProxy */;
+		};
+		F69F0D4BD16AD05B0D635E65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Tests-NotifiCrash";
+			target = 5696A2CF9E0C15614A865BB7 /* Pods-Tests-NotifiCrash */;
+			targetProxy = 606B7063B5474A6EC76D8EDB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		068342F103A61E58C55981EF /* Release */ = {
+		111625A84612CF135F3E8858 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3456B6557DD40DE368634215 /* Pods-NotifiCrash-KeepLayout-Private.xcconfig */;
+			baseConfigurationReference = D51DD028D1FE0EF4551D26BD /* Pods-NotifiCrash-KeepLayout-Private.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-NotifiCrash-KeepLayout/Pods-NotifiCrash-KeepLayout-prefix.pch";
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
+			};
+			name = Debug;
+		};
+		15D5DB22CF9DF3A5854D97A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11A7BC9AD3F28F4685FBD46B /* Pods-Tests.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		0BBD622C24AEE6C309775926 /* Debug */ = {
+		1CEE89726F7ADED38D6955AA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6496086C0073BAADC43FB2FE /* Pods-NotifiCrash-NotifiCrash-Private.xcconfig */;
+			baseConfigurationReference = D51DD028D1FE0EF4551D26BD /* Pods-NotifiCrash-KeepLayout-Private.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-NotifiCrash-NotifiCrash/Pods-NotifiCrash-NotifiCrash-prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		1CDA62CE829EE318E1FEB94F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C094B359E7255F6C73EE2F6 /* Pods-NotifiCrash.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		213FBEB2AE489344180AB2A7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9F57DEA899EECECD1475A16 /* Pods-Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		21AC5C54FE42CAC6F1D4C9BA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3456B6557DD40DE368634215 /* Pods-NotifiCrash-KeepLayout-Private.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-NotifiCrash-KeepLayout/Pods-NotifiCrash-KeepLayout-prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		42528117782D88D83958226B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C64CFDAD10CD045C0C9DB3A /* Pods-Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		4419E326CA7B72D6AB0E3F3D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A54E132257C02B3FD8F06FB /* Pods-Tests-NotifiCrash-Private.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Tests-NotifiCrash/Pods-Tests-NotifiCrash-prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		70522C42B11F3F24752243A3 /* Release */ = {
+		20E9DFA6FE722834779945CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -769,7 +655,9 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				COPY_PHASE_STRIP = NO;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
@@ -781,11 +669,124 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		72F4E200E819A74379941039 /* Debug */ = {
+		5566695A08BD3DB0861882B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A40C9C94791FE548420EF9C4 /* Pods-Tests-NotifiCrash-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Tests-NotifiCrash/Pods-Tests-NotifiCrash-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5BC3499286801B96A3E6CE2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 913E25D79AC07187EDEB2AB3 /* Pods-NotifiCrash.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7AD66EE77AD44490B00AA0D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D552C497DF420988A7EBAF7F /* Pods-NotifiCrash-NotifiCrash-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-NotifiCrash-NotifiCrash/Pods-NotifiCrash-NotifiCrash-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8BB515F851136597E251DC30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A40C9C94791FE548420EF9C4 /* Pods-Tests-NotifiCrash-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Tests-NotifiCrash/Pods-Tests-NotifiCrash-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		923EFDA0C8F1104EC43A7A5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEE7320DA5EC2CE07FEB454A /* Pods-Tests.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		95E4AB7FB0DE9E2CF760F8B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D552C497DF420988A7EBAF7F /* Pods-NotifiCrash-NotifiCrash-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-NotifiCrash-NotifiCrash/Pods-NotifiCrash-NotifiCrash-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CE11D5173A8E18C49907DB17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F8B14DFE0F303190B86E7EA /* Pods-NotifiCrash.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		E74C64A9C838AB1BBEB171E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -800,7 +801,9 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				COPY_PHASE_STRIP = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -818,153 +821,68 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
-		};
-		7F0D7BAF35B4FEB54D1FB378 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A54E132257C02B3FD8F06FB /* Pods-Tests-NotifiCrash-Private.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Tests-NotifiCrash/Pods-Tests-NotifiCrash-prefix.pch";
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		92C64A7E38BC21687389CDC7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6496086C0073BAADC43FB2FE /* Pods-NotifiCrash-NotifiCrash-Private.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-NotifiCrash-NotifiCrash/Pods-NotifiCrash-NotifiCrash-prefix.pch";
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		B3EC9037433765613E55A13E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E34692356DC02312920884BB /* Pods-NotifiCrash.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		48B67A3185C2660485E65CC7 /* Build configuration list for PBXProject "Pods" */ = {
+		190DB7A1CC8C32787E3FEA86 /* Build configuration list for PBXNativeTarget "Pods-Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				72F4E200E819A74379941039 /* Debug */,
-				70522C42B11F3F24752243A3 /* Release */,
+				923EFDA0C8F1104EC43A7A5E /* Debug */,
+				15D5DB22CF9DF3A5854D97A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95F3510C6B8C93710085B9B6 /* Build configuration list for PBXNativeTarget "Pods-NotifiCrash-NotifiCrash" */ = {
+		247E5419375BE5856039555A /* Build configuration list for PBXNativeTarget "Pods-NotifiCrash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0BBD622C24AEE6C309775926 /* Debug */,
-				92C64A7E38BC21687389CDC7 /* Release */,
+				5BC3499286801B96A3E6CE2B /* Debug */,
+				CE11D5173A8E18C49907DB17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AD3F910FCD2DFE057ADDB320 /* Build configuration list for PBXNativeTarget "Pods-Tests-NotifiCrash" */ = {
+		735FB194C8815342CA5F14A1 /* Build configuration list for PBXNativeTarget "Pods-Tests-NotifiCrash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4419E326CA7B72D6AB0E3F3D /* Debug */,
-				7F0D7BAF35B4FEB54D1FB378 /* Release */,
+				5566695A08BD3DB0861882B7 /* Debug */,
+				8BB515F851136597E251DC30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D2AC39D9E62B2A9D34F0F8E2 /* Build configuration list for PBXNativeTarget "Pods-Tests" */ = {
+		87735F71032B257DB15F1E4C /* Build configuration list for PBXNativeTarget "Pods-NotifiCrash-NotifiCrash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				213FBEB2AE489344180AB2A7 /* Debug */,
-				42528117782D88D83958226B /* Release */,
+				7AD66EE77AD44490B00AA0D9 /* Debug */,
+				95E4AB7FB0DE9E2CF760F8B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EB39598548AAE515196217D2 /* Build configuration list for PBXNativeTarget "Pods-NotifiCrash" */ = {
+		A79D7E6CB72E934EB44C54CB /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1CDA62CE829EE318E1FEB94F /* Debug */,
-				B3EC9037433765613E55A13E /* Release */,
+				E74C64A9C838AB1BBEB171E2 /* Debug */,
+				20E9DFA6FE722834779945CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F5F0F0A647B3110F2B65A54D /* Build configuration list for PBXNativeTarget "Pods-NotifiCrash-KeepLayout" */ = {
+		BF68B83B89C324C942FECD5D /* Build configuration list for PBXNativeTarget "Pods-NotifiCrash-KeepLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				21AC5C54FE42CAC6F1D4C9BA /* Debug */,
-				068342F103A61E58C55981EF /* Release */,
+				111625A84612CF135F3E8858 /* Debug */,
+				1CEE89726F7ADED38D6955AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E917DBDA3793598D72E67C68 /* Project object */;
+	rootObject = 3E416A292C132E69A4F658DF /* Project object */;
 }
