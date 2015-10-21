@@ -16,5 +16,5 @@
 
 + (Configuration*)configuration;
 + (void)initWithSerialNumber:(NSString*)serialNumber;
-
++ (void)addExtra:(NSString*)key value:(NSString*)value;
 @end
