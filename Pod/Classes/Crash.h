@@ -21,5 +21,6 @@
 @property(strong, nonatomic) NSString *method;
 @property(strong, nonatomic) NSString *lineNumber;
 @property(strong, nonatomic) NSString *stackTrace;
+@property(strong, nonatomic) NSMutableDictionary *extra;
 
 @end

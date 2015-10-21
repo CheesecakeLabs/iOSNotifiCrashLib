@@ -23,6 +23,7 @@
 
     // Initializes the library which will handle the uncaught exceptions.
     [NotifiCrash initWithSerialNumber:@"1255f5292a006c4c3bc50ffe428339"];
+    [NotifiCrash addExtra:@"extra text" value:@"extra value"];
 
     return YES;
 }
