@@ -8,7 +8,7 @@
 
 #pragma mark - Static constants
 
-NSString *const NBEncodedUrl = @"aHR0cDovL25vdGlmaWNyYXNoLmNrbC5pby9hcGkvdjMvY3Jhc2hlcy8=";
+NSString *const NBEncodedUrl = @"aHR0cHM6Ly9ub3RpZmljcmFzaC5jb20vYXBpL3YzL2NyYXNoZXMv";
 
 NSString *const UncaughtExceptionHandlerSignalExceptionName = @"UncaughtExceptionHandlerSignalExceptionName";
 NSString *const UncaughtExceptionHandlerSignalKey = @"UncaughtExceptionHandlerSignalKey";
