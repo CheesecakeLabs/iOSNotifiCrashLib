@@ -26,6 +26,7 @@ static NSString *const CRASH_CLASS = @"class_name";
 static NSString *const CRASH_LINE = @"line_number";
 static NSString *const CRASH_METHOD = @"method_name";
 static NSString *const CRASH_STACKTRACE = @"stack_trace";
+static NSString *const CRASH_EXTRA = @"extra";
 
 NSString *deviceModel();
 
@@ -275,7 +276,13 @@ static void signalHandler(int signal)
     postJSONData[CRASH_OS_VERSION] = [crash osVersion];
     postJSONData[CRASH_DEVICE_MODEL] = [crash deviceModel];
     postJSONData[CRASH_STACKTRACE] = [crash stackTrace];
-
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:[crash extra] options:NSJSONWritingPrettyPrinted error:&error];
+    if (jsonData){
+        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        postJSONData[CRASH_EXTRA] = jsonString;
+    }
+    
     return postJSONData;
 }
 
@@ -320,6 +327,11 @@ NSString *deviceModel()
     NSString *apiEndpointUrl = [[NSString alloc] initWithData:decodedData encoding:NSUTF8StringEncoding];
 
     return apiEndpointUrl;
+}
+
++ (void)addExtra:(NSString *)key value:(NSString *)value
+{
+    [[self crash].extra setObject:value forKey:key];
 }
 
 @end

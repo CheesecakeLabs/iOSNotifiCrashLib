@@ -13,6 +13,7 @@
 - (id)init
 {
     self = [super init];
+    self.extra = [NSMutableDictionary new];
     return self;
 }
 
